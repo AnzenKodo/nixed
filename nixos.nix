@@ -4,9 +4,10 @@
   imports =
     [
       ./hardware-configuration.nix
-      # Downloads Home Manager
+
+      # Home Manager
       "${ builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz }/nixos"
-      /home/ramen/.config/nixos/home-manager.nix
+      /home/ramen/.config/nixed/home-manager.nix
     ];
 
   # EFI boot loader
@@ -55,7 +56,7 @@
       enable = true;
 
       # Desktop Environment
-      displayManager.sddm.enable = true;
+      displayManager.startx.enable = true;
       windowManager.qtile.enable = true;
       desktopManager.xterm.enable = false;
 

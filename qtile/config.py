@@ -9,7 +9,7 @@ import re
 
 colors = []
 cache = f"/home/{os.getlogin()}/.cache/wal/colors"
-
+wallpaper_location = f"/home/{os.getlogin()}/.cache/background.jpg"
 
 def load_colors(cache):
     with open(cache, 'r') as file:
@@ -39,8 +39,8 @@ class Commands:
     distribution = 'NixOS'
     network_interface = 'wlo1'
     backlight_name = 'intel_backlight'
-    volumeUp = 'amixer -q sset Master 1%+'
-    volumeDown = 'amixer -q sset Master 1%-'
+    volumeUp = 'amixer -q sset Master 5%+'
+    volumeDown = 'amixer -q sset Master 5%-'
     volumeMute = 'amixer -c 0 -q set Master toggle'
 
 
@@ -114,29 +114,34 @@ keys = [
     ),
     # Volume
     Key(
-        [], 'XF86AudioRaiseVolume',
+        # [], 'XF86AudioRaiseVolume',
+        [mod], 'v',
         lazy.spawn(Commands.volumeUp),
         desc='Increase the Volume'
     ),
     Key(
-        [], 'XF86AudioLowerVolume',
+        # [], 'XF86AudioLowerVolume',
+        [mod, 'shift'], 'v',
         lazy.spawn(Commands.volumeDown),
         desc='Lower the Volume'
     ),
     Key(
-        [], 'XF86AudioMute',
+        # [], 'XF86AudioMute',
+        [mod, 'control'], 'v',
         lazy.spawn(Commands.volumeMute),
         desc='Mute the Volume'
     ),
 
     # Brightness
     Key(
-        [], 'XF86MonBrightnessUp',
+        # [mod], 'XF86MonBrightnessUp',
+        [mod], 'b',
         lazy.function(backlight('inc')),
         desc='Brightness up'
     ),
     Key(
-        [], 'XF86MonBrightnessDown',
+        # [], 'XF86MonBrightnessDown',
+        [mod, 'shift'], 'b',
         lazy.function(backlight('dec')),
         desc='Brightness down'
     ),
@@ -154,21 +159,13 @@ keys = [
     ),
     Key(
         [mod], 'e',
-        lazy.spawn('rofimoji -a copy --clipboarder xclip'),
+        lazy.spawn('rofimoji'),
         desc='Rofi emoji selector'
     ),
     Key(
         [mod], 'c',
         lazy.spawn('rofi -modi "clipboard:greenclip print" -show clipboard -run-command "{cmd}"'),
         desc='Rofi Clipboard'
-    ),
-    Key(
-        [mod], 'b',
-        lazy.spawn('rofi-bluetooth')
-    ),
-    Key(
-        [mod], 'w',
-        lazy.spawn('rofi-network-manager')
     ),
     Key(
         [mod, 'shift'], 'q',
@@ -281,8 +278,8 @@ def format_text(text):
 
 screens = [
     Screen(
-        # wallpaper='~/.config/qtile/background.png',
-        # wallpaper_mode='stretch',
+        wallpaper=wallpaper_location,
+        wallpaper_mode='stretch',
         top=bar.Bar(
             [
                 widget.GroupBox(
@@ -367,8 +364,8 @@ screens = [
                 # ),
                 # widget.StatusNotifier()
             ],
-            24,
-            margin=[5, 5, 0, 5],
+            25,
+            # margin=[5, 5, 0, 5],
             opacity=0.8
         ),
         left=bar.Gap(size=5),

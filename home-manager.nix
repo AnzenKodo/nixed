@@ -34,20 +34,6 @@
         enable = true;
         extraConfig = builtins.readFile ./kitty.conf;
       };
-
-      # Shell
-      fish = {
-        enable = true;
-        plugins = [{
-    	  name = "pure";
-    	  src = pkgs.fetchFromGitHub {
-      	    owner = "rafaelrinaldi";
-      	    repo = "pure";
-      	    rev = "2792c30dad2785d2618df38ad30756d112cec2b8";
-      	    sha256 = "134sz3f98gb6z2vgd5kkm6dd8pka5gijk843c32s616w35y07sga";
-    	    };
-  	    }];
-      };
       bash.historyFile = ".cache/bash_history";
     };
 
@@ -76,12 +62,19 @@
         enableSshSupport = true;
         defaultCacheTtl = 1800;
       };
+      gnome-keyring.enable = true;
     };
 
     home = {
       file = {
-        ".config/rofi/config.rasi".text = ''@import "~/.config/nixos/rofi"'';
+        ".config/rofi/config.rasi".text = ''
+          @import "~/.config/nixed/rofi"
+        '';
         ".config/qtile".source = ./qtile;
+        ".config/fish/config.fish"= {
+          source = ./fish.fish;
+          recursive = true;
+        };
       };
 
       packages = with pkgs; [
@@ -94,6 +87,7 @@
         pywal  	  # Generate color schemes
         alsaUtils # Volume Management
         trash-cli # rm put trash bin
+        fish      # Shell
 
         # Rofi
         rofi		                  # Menu
@@ -101,29 +95,6 @@
         rofi-power-menu           # Power Menu
         haskellPackages.greenclip # Clipboard
       ];
-
-      shellAliases = {
-        # Better System Aliases
-        rm        = "trash-put";
-        cp        = "cp -iv";
-        mv        = "mv -iv";
-        bash      = "bash -o vi";
-        cal       = "cal -y";
-        grep      = "grep -i";
-        ls        = "ls -A";
-        mkdir     = "mkdir -v";
-        # For Fish shell
-        wallpaper = "bash wallpaper";
-        backup    = "bash backup";
-        # nixed Command
-        nixed     = "$NIXED";
-      };
-      sessionVariables = rec {
-        # Path of nixed Dirs
-        NIXED = "\${HOME}/.config/Nixed";
-        # Path of executable files
-        PATH = [ "\${HOME}/.local/bin" ];
-      };
     };
     xdg = {
       enable = true;
