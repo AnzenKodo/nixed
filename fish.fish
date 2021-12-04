@@ -7,8 +7,8 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx PATH $HOME/.local/bin:$PATH
 set -gx NIXED $XDG_CONFIG_HOME/nixed
 set -gx XCURSOR_THEME Bibata_Oil
-# Alias
 
+# Alias
 alias rm="trash-put"
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -24,10 +24,6 @@ alias startq="startx /usr/bin/env qtile -c ~/.config/nixed/qtile/config.py"
 if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
 end
-
-# Start ssh-agent
-eval (set SSH_AUTH_SOCK /run/user/1000/keyring/ssh)
-set -gx SSH_AUTH_SOCK
 
 # Disable welcome message
 set fish_greeting
