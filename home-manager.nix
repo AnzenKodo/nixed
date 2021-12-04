@@ -20,9 +20,13 @@
         plugins = with pkgs.vimPlugins; [
           vim-plug
         ];
-        extraConfig = builtins.readFile ./nvim.vim;
+        extraConfig = ''
+          source ~/.config/nixed/nvim.vim
+        '';
         configure = {
-          customRC = builtins.readFile ./nvim.vim;
+          customRC = ''
+            source ~/.config/nixed/nvim.vim
+          '';
           packages.myVimPackage = with pkgs.vimPlugins; {
             start = [ vim-plug ];
           };
@@ -32,7 +36,9 @@
       # Terminal
       kitty = {
         enable = true;
-        extraConfig = builtins.readFile ./kitty.conf;
+        extraConfig = ''
+          include ~/.config/nixed/kitty.conf
+        '';
       };
       bash.historyFile = ".cache/bash_history";
     };
@@ -57,24 +63,19 @@
       };
 
       # To SSH password remember
-      gpg-agent = {
-        enable = true;
-        enableSshSupport = true;
-        defaultCacheTtl = 1800;
-      };
-      gnome-keyring.enable = true;
+      # gpg-agent = {
+      #   enable = true;
+      #   enableSshSupport = true;
+      #   # defaultCacheTtl = 1800;
+      # };
+      # gnome-keyring.enable = true;
     };
 
     home = {
       file = {
-        ".config/rofi/config.rasi".text = ''
-          @import "~/.config/nixed/rofi"
+        ".config/fish/config.fish".text = ''
+          source ~/.config/nixed/fish.fish
         '';
-        ".config/qtile".source = ./qtile;
-        ".config/fish/config.fish"= {
-          source = ./fish.fish;
-          recursive = true;
-        };
       };
 
       packages = with pkgs; [
@@ -88,10 +89,11 @@
         alsaUtils # Volume Management
         trash-cli # rm put trash bin
         fish      # Shell
+        libnotify # Sends desktop notifications to a notification daemon
 
         # Rofi
-        rofi		                  # Menu
-        rofimoji                  # Emote
+        dmenu		                  # Menu
+        clipmenu                  # Emote
         rofi-power-menu           # Power Menu
         haskellPackages.greenclip # Clipboard
       ];

@@ -13,7 +13,7 @@ xinput disable "AT Translated Set 2 keyboard"
 picom &
 
 # Clipboard
-greenclip daemon &
+clipmenud &
 
 # Gnome Key chain
 eval $(/run/wrappers/bin/gnome-keyring-daemon --start --daemonize)

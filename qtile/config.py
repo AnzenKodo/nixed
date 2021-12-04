@@ -1,5 +1,5 @@
 from typing import List
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -20,8 +20,6 @@ def load_colors(cache):
 
 
 load_colors(cache)
-print(f'{colors}')
-
 
 class Style:
     background = colors[0]
@@ -42,31 +40,13 @@ class Commands:
     volumeUp = 'amixer -q sset Master 5%+'
     volumeDown = 'amixer -q sset Master 5%-'
     volumeMute = 'amixer -c 0 -q set Master toggle'
+    brightnessUp = 'bright +'
+    brightnessDown = '~/.local/bin/bright -'
+    dmenu = f'dmenu_run -i -b -p "≣" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {colors[4]} -sf {colors[8]}'
+    clipboard = f'clipmenu -i -b -p "≣" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {colors[4]} -sf {colors[8]}'
 
 
 mod = 'mod4'
-
-
-def backlight(action):
-    def f(qtile):
-        brightness = int(
-            subprocess.run(
-                ['xbacklight', '-get'],
-                stdout=subprocess.PIPE
-            ).stdout
-        )
-        if brightness != 1 or action != 'dec':
-            if (brightness > 49 and action == 'dec') \
-                    or (brightness > 39 and action == 'inc'):
-                subprocess.run(
-                    ['xbacklight', f'-{action}', '10', '-fps', '10']
-                )
-            else:
-                subprocess.run(
-                    ['xbacklight', f'-{action}', '1']
-                )
-    return f
-
 
 keys = [
     # WM
@@ -87,7 +67,7 @@ keys = [
         desc='Reset all window sizes'
     ),
     Key(
-        [mod, 'shift'], 'Return',
+        [mod, 'shift'], 'r',
         lazy.layout.toggle_split(),
         desc='Toggle between split and unsplit sides of stack'
     ),
@@ -136,43 +116,31 @@ keys = [
     Key(
         # [mod], 'XF86MonBrightnessUp',
         [mod], 'b',
-        lazy.function(backlight('inc')),
+        lazy.function(Commands.brightnessUp),
         desc='Brightness up'
     ),
     Key(
         # [], 'XF86MonBrightnessDown',
         [mod, 'shift'], 'b',
-        lazy.function(backlight('dec')),
+        lazy.function(Commands.brightnessDown),
         desc='Brightness down'
     ),
 
-    # Rofi
-    Key(
-        [mod], 'r',
-        lazy.function('rofi -show run'),
-        desc='Spawn a command using a prompt widget'
-    ),
+    # Menu
     Key(
         [mod], 'Return',
-        lazy.spawn('rofi -show drun'),
-        desc='Rofi run'
+        lazy.spawn(Commands.dmenu),
+        desc='Open application starter'
     ),
     Key(
         [mod], 'e',
-        lazy.spawn('rofimoji'),
-        desc='Rofi emoji selector'
+        lazy.spawn('kitty'),
+        desc='Emoji selector'
     ),
     Key(
         [mod], 'c',
-        lazy.spawn('rofi -modi "clipboard:greenclip print" -show clipboard -run-command "{cmd}"'),
-        desc='Rofi Clipboard'
-    ),
-    Key(
-        [mod, 'shift'], 'q',
-        lazy.spawn(
-            'rofi -show powermenu -modi powermenu:rofi-power-menu'
-        ),
-        desc='Rofi power menu'
+        lazy.spawn(Commands.clipboard),
+        desc='Clipboard'
     ),
     # Application
     Key(
@@ -226,12 +194,13 @@ for i in groups:
         ),
     ])
 
+layout_theme = {
+    "border_width": 2,
+    "border_focus": colors[1]
+}
+
 layouts = [
-    layout.Columns(
-        border_focus=colors[1],
-        border_width=2,
-        add_on_top=False
-    ),
+    layout.Columns(**layout_theme),
     layout.Max()
 ]
 
@@ -272,14 +241,15 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 
+# Notification format
 def format_text(text):
     return re.sub(' +', ' ', text.strip().replace('\n', ' '))
 
 
 screens = [
     Screen(
-        wallpaper=wallpaper_location,
-        wallpaper_mode='stretch',
+        # wallpaper=wallpaper_location,
+        # wallpaper_mode='stretch',
         top=bar.Bar(
             [
                 widget.GroupBox(
@@ -294,7 +264,7 @@ screens = [
                     use_mouse_wheel=False
                 ),
                 # widget.Prompt(
-                #     background=Colors.blue,
+                #     foreground=Style.fontColor,
                 # ),
                 # widget.Chord(
                 #     chords_colors={
@@ -327,18 +297,18 @@ screens = [
                 #     prefix_long_break='🎉',
                 # ),
                 widget.Volume(
-                    fmt=' {} |',
-                    emoji=True,
+                    fmt=' 🔊 {} |',
+                    # emoji=True,
                 ),
-                widget.Backlight(
-                    backlight_name=Commands.backlight_name,
-                    format=' ☀️ {percent:1.0%} |'
-                ),
+                # widget.Backlight(
+                #     backlight_name=Commands.backlight_name,
+                #     format=' ☀️ {percent:1.0%} |',
+                # ),
                 widget.Battery(
                     foreground=Style.fontColor,
                     background=Style.background,
                     low_background=Style.important,
-                    format=' {char} {percent:2.0%} ',
+                    format=' {char} {percent:2.0%}',
                     notify_below=30,
                     discharge_char='🔋',
                     charge_char='⚡',
@@ -397,7 +367,7 @@ mouse = [
 
 @ hook.subscribe.startup_once  # Autostart
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/.config/nixed/qtile/autostart.sh')
     subprocess.call([home])
 
 

@@ -30,7 +30,8 @@
     networkmanager = {
       enable = true;
       wifi = {
-        macAddress = "random";
+      # Randomize the Mac Address for security purpose.
+      macAddress = "random";
       };
     };
 
@@ -74,6 +75,8 @@
 
     # Printing support
     # printing.enable = true;
+
+    openssh.enable = true;
   };
 
   fonts.fonts = with pkgs; [
@@ -100,9 +103,16 @@
     };
   };
 
+  # programs.ssh.startAgent = true;
+  programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+        pinentryFlavor = "gnome3";
+      };
+
   # Gnome Keyring
-  # services.gnome.gnome-keyring.enable = true;
-  # security.pam.services.sddm.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.startx.enableGnomeKeyring = true;
 
   # Audio server uses this to acquire real-time priority
   security.rtkit.enable = true;
