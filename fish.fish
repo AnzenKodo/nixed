@@ -25,6 +25,10 @@ if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
 end
 
+# Start ssh-agent
+eval (ssh-agent -c)
+set -gx SSH_AUTH_SOCK
+
 # Disable welcome message
 set fish_greeting
 
