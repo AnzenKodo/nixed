@@ -16,5 +16,5 @@ picom &
 clipmenud &
 
 # Gnome Key chain
-# eval $(gnome-keyring-daemon --daemonize --components=ssh,secrets)
-# export SSH_AUTH_SOCK
+eval $(gnome-keyring-daemon --daemonize --components=ssh,secrets)
+export SSH_AUTH_SOCK
