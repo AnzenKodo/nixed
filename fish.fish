@@ -26,7 +26,7 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 # Start ssh-agent
-eval (ssh-agent -c)
+eval (set SSH_AUTH_SOCK /run/user/1000/keyring/ssh)
 set -gx SSH_AUTH_SOCK
 
 # Disable welcome message
