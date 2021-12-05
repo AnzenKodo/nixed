@@ -25,9 +25,7 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 # Gnome Keyring startup
-# if test -n "$DESKTOP_SESSION"
-#     set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
-# end
+    set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
 
 # Disable welcome message
 set fish_greeting
