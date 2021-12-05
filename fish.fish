@@ -24,9 +24,6 @@ if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
 end
 
-# Gnome Keyring startup
-set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
-
 # Disable welcome message
 set fish_greeting
 
@@ -80,7 +77,7 @@ end
 function __lucid_abort_check
     if set -q __lucid_check_pid
         set -l pid $__lucid_check_pid
-        functions -e __lucid_on_finish_$pid
+        functions -e __lucid_n_finish_$pid
         command kill $pid >/dev/null 2>&1
         set -e __lucid_check_pid
     end
