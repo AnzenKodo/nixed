@@ -81,7 +81,6 @@
       packages = with pkgs; [
         # GUI
         brave  	        # Browser
-        # bibata-cursors  # Cursors
 
         # Terminal
         curl   	  # Downloaded
@@ -103,8 +102,9 @@
     };
     xsession = {
       enable = true;
-      pointerCursor.package = pkgs.bibata-cursors;
-      pointerCursor.name = "Bibata_Oil";
+      pointerCursor.package = pkgs.capitaine-cursors;
+      # pointerCursor.name = "Bibata_Oil";
+      pointerCursor.name = "Capitaine_Cursours_Black";
     };
   };
 }

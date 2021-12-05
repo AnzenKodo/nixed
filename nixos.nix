@@ -58,8 +58,8 @@
 
       # Desktop Environment
       displayManager.startx.enable = true;
-      windowManager.qtile.enable = true;
       desktopManager.xterm.enable = false;
+      windowManager.qtile.enable = true;
 
       # Touch pad Support
       libinput.enable = true;
@@ -104,11 +104,11 @@
   };
 
   # programs.ssh.startAgent = true;
-  programs.gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
-        pinentryFlavor = "gnome3";
-      };
+  # programs.gnupg.agent = {
+  #       enable = true;
+  #       enableSSHSupport = true;
+  #       # pinentryFlavor = "gnome3";
+  #     };
 
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
