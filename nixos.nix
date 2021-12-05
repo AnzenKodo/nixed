@@ -76,7 +76,7 @@
     # Printing support
     # printing.enable = true;
 
-    openssh.enable = true;
+    # openssh.enable = true;
   };
 
   fonts.fonts = with pkgs; [

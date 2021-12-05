@@ -25,7 +25,7 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 # Gnome Keyring startup
-    set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
+set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
 
 # Disable welcome message
 set fish_greeting
