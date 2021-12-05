@@ -27,6 +27,9 @@ end
 # Disable welcome message
 set fish_greeting
 
+# Gnome Keyring startup
+set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
+
 # Prompt from https://github.com/mattgreen/lucid.fish
 if ! set -q lucid_dirty_indicator
     set -g lucid_dirty_indicator "•"
