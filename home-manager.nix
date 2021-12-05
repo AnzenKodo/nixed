@@ -104,6 +104,10 @@
       enable = true;
       pointerCursor.package = pkgs.capitaine-cursors;
       pointerCursor.name = "capitaine-cursors";
+      profileExtra = ''
+        eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+        export SSH_AUTH_SOCK
+      '';
     };
   };
 }
