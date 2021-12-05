@@ -19,4 +19,4 @@ clipmenud &
 # eval $(gnome-keyring-daemon --start --components=ssh,secrets)
 # export SSH_AUTH_SOCK
 # dbus-update-activation-environment --systemd DISPLAY
-eval $(/run/wrappers/bin/gnome-keyring-daemon --start --components=ssh)
+# eval $(/run/wrappers/bin/gnome-keyring-daemon --start --components=ssh)

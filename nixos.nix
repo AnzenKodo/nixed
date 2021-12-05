@@ -104,15 +104,15 @@
   };
 
   # programs.ssh.startAgent = true;
-  # programs.gnupg.agent = {
-  #       enable = true;
-  #       enableSSHSupport = true;
-  #       # pinentryFlavor = "gnome3";
-  #     };
+  programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+        # pinentryFlavor = "gnome3";
+      };
 
   # Gnome Keyring
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.startx.enableGnomeKeyring = true;
+  # services.gnome.gnome-keyring.enable = true;
+  # security.pam.services.startx.enableGnomeKeyring = true;
 
   # Audio server uses this to acquire real-time priority
   security.rtkit.enable = true;

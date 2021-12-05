@@ -103,8 +103,7 @@
     xsession = {
       enable = true;
       pointerCursor.package = pkgs.capitaine-cursors;
-      # pointerCursor.name = "Bibata_Oil";
-      pointerCursor.name = "Capitaine_Cursours_Black";
+      pointerCursor.name = "capitaine-cursors";
     };
   };
 }
