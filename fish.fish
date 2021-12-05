@@ -6,7 +6,6 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx PATH $HOME/.local/bin:$PATH
 set -gx NIXED $XDG_CONFIG_HOME/nixed
-set -gx XCURSOR_THEME Bibata_Oil
 
 # Alias
 alias rm="trash-put"
@@ -23,6 +22,11 @@ alias startq="startx /usr/bin/env qtile -c ~/.config/nixed/qtile/config.py"
 # Start Window Manger
 if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
+end
+
+# Gnome Keyring startup
+if test -n "$DESKTOP_SESSION"
+    set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
 end
 
 # Disable welcome message

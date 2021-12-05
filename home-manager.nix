@@ -40,7 +40,7 @@
           include ~/.config/nixed/kitty.conf
         '';
       };
-      bash.historyFile = ".cache/bash_history";
+      bash.historyFile = "~/.cache/bash_history";
     };
 
     services = {
@@ -81,7 +81,7 @@
       packages = with pkgs; [
         # GUI
         brave  	        # Browser
-        bibata-cursors  # Cursors
+        # bibata-cursors  # Cursors
 
         # Terminal
         curl   	  # Downloaded
@@ -100,6 +100,11 @@
     };
     xdg = {
       enable = true;
+    };
+    xsession = {
+      enable = true;
+      pointerCursor.package = pkgs.bibata-cursors;
+      pointerCursor.name = "Bibata_Oil";
     };
   };
 }
