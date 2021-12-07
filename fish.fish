@@ -28,7 +28,10 @@ end
 set fish_greeting
 
 # Gnome Keyring startup
-set -x (gnome-keyring-daemon --start --components=ssh,secrets | string split "=")
+set -x (gnome-keyring-daemon --start | string split "=")
+
+# Vi mode
+fish_vi_key_bindings
 
 # Prompt from https://github.com/mattgreen/lucid.fish
 if ! set -q lucid_dirty_indicator

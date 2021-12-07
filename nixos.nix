@@ -106,7 +106,7 @@
   programs.ssh.startAgent = true;
 
   # Gnome Keyring
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
 
   # Audio server uses this to acquire real-time priority

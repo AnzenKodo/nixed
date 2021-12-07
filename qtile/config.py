@@ -42,8 +42,8 @@ class Commands:
     volumeMute = 'amixer -c 0 -q set Master toggle'
     brightnessUp = 'bright +'
     brightnessDown = '~/.local/bin/bright -'
-    dmenu = f'dmenu_run -i -b -p "≣" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {colors[4]} -sf {colors[8]}'
-    clipboard = f'clipmenu -i -b -p "≣" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {colors[4]} -sf {colors[8]}'
+    dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
+    clipboard = f'clipmenu -i -b -p "✀" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
 
 
 mod = 'mod4'
@@ -248,8 +248,8 @@ def format_text(text):
 
 screens = [
     Screen(
-        # wallpaper=wallpaper_location,
-        # wallpaper_mode='stretch',
+        wallpaper=wallpaper_location,
+        wallpaper_mode='fill',
         top=bar.Bar(
             [
                 widget.GroupBox(

@@ -101,7 +101,7 @@
       enable = true;
     };
     xsession = {
-      enable = true;
+      # enable = true;
       pointerCursor.package = pkgs.capitaine-cursors;
       pointerCursor.name = "capitaine-cursors";
     };
