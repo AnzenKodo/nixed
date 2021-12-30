@@ -70,7 +70,6 @@
       # };
       # gnome-keyring.enable = true;
     };
-
     home = {
       file = {
         ".config/fish/config.fish".text = ''
@@ -81,6 +80,9 @@
       packages = with pkgs; [
         # GUI
         brave  	        # Browser
+        nyxt
+        dmenu           # Menu
+        clipmenu        # Clipboard
 
         # Terminal
         curl   	  # Downloaded
@@ -90,11 +92,8 @@
         fish      # Shell
         libnotify # Sends desktop notifications to a notification daemon
 
-        # Rofi
-        dmenu		                  # Menu
-        clipmenu                  # Emote
-        rofi-power-menu           # Power Menu
-        haskellPackages.greenclip # Clipboard
+        # Programming
+        nodejs  # Node.JS
       ];
     };
     xdg = {
@@ -102,8 +101,20 @@
     };
     xsession = {
       # enable = true;
-      pointerCursor.package = pkgs.capitaine-cursors;
-      pointerCursor.name = "capitaine-cursors";
+      pointerCursor = {
+        package = pkgs.capitaine-cursors;
+        name = "capitaine-cursors";
+      };
     };
+    gtk = {
+      # enable = true;
+      font.name = "JetBrains Mono";
+      iconTheme = {
+        package = pkgs.papirus-icon-theme;
+        name = "Papirus-Dark";
+      };
+    };
+    # qt.platformTheme = "gtk";
+
   };
 }

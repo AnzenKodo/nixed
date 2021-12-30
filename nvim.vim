@@ -95,16 +95,19 @@ set mouse=
 
 " Plug ins
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'dylanaraps/wal.vim' " Color scheme
-	Plug 'sheerun/vim-polyglot' " Syntax highlighting
-	Plug 'tpope/vim-commentary' " Comment
-	Plug 'jiangmiao/auto-pairs' " Join pairs
-	Plug 'tpope/vim-surround' " Change pairs
-	Plug 'luochen1990/rainbow' " Rainbow parentheses
-	Plug 'dense-analysis/ale' " Lintier, Formatter, Code Completion
-	Plug 'gko/vim-coloresque' " Color Preview
-	Plug 'itchyny/lightline.vim' " Status bar
+	Plug 'dylanaraps/wal.vim'			" Color scheme
+	Plug 'sheerun/vim-polyglot'		" Syntax highlighting
+	Plug 'tpope/vim-commentary'		" Comment
+	Plug 'jiangmiao/auto-pairs'		" Join pairs
+	Plug 'tpope/vim-surround'			" Change pairs
+	Plug 'luochen1990/rainbow'		" Rainbow parentheses
+	Plug 'dense-analysis/ale'			" Lintier, Formatter, Code Completion
+	Plug 'gko/vim-coloresque'			" Color Preview
+	Plug 'itchyny/lightline.vim'	" Status bar
 	Plug 'airblade/vim-gitgutter' " Git
+
+	" Programming Language
+	Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'npm i'}	" Markdown Preview
 call plug#end()
 
 " Wal
@@ -115,12 +118,16 @@ let g:rainbow_active = 1 " Active Plug-in
 
 " A.L.E
 let b:ale_fixers = {'typescript': ['prettier', 'eslint']}
+let b:ale_fixers = {'svelte': ['prettier', 'eslint']}
+
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
-set omnifunc=ale
+set omnifunc=ale#completion#OmniFunc
 let g:ale_sign_error = '🔴'
 let g:ale_sign_warning = '⭕'
 
 " Light line
 let g:lightline = { 'colorscheme': 'one' }
+
+let g:instant_markdown_autostart = 0

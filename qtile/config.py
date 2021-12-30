@@ -252,6 +252,7 @@ screens = [
         wallpaper_mode='fill',
         top=bar.Bar(
             [
+                widget.CurrentLayoutIcon(),
                 widget.GroupBox(
                     inactive=Style.fontColor,
                     this_current_screen_border=Style.heighlight,
@@ -335,7 +336,7 @@ screens = [
                 # widget.StatusNotifier()
             ],
             25,
-            # margin=[5, 5, 0, 5],
+            margin=[5, 5, 0, 5],
             opacity=0.8
         ),
         left=bar.Gap(size=5),

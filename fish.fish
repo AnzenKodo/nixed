@@ -7,7 +7,12 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx PATH $HOME/.local/bin:$PATH
 set -gx NIXED $XDG_CONFIG_HOME/nixed
 
+#Import colors
+# . "$HOME/.cache/wal/colors.fish"
+
+
 # Alias
+# alias drun="dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15""
 alias rm="trash-put"
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -28,10 +33,15 @@ end
 set fish_greeting
 
 # Gnome Keyring startup
-set -x (gnome-keyring-daemon --start | string split "=")
+# set -x (gnome-keyring-daemon --start | string split "=")
 
 # Vi mode
 fish_vi_key_bindings
+
+# NVM
+function nvm
+    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
 
 # Prompt from https://github.com/mattgreen/lucid.fish
 if ! set -q lucid_dirty_indicator
