@@ -13,6 +13,7 @@ set -gx NIXED $XDG_CONFIG_HOME/nixed
 
 # Alias
 # alias drun="dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15""
+alias icat="kitty +kitten icat"
 alias rm="trash-put"
 alias cp="cp -iv"
 alias mv="mv -iv"

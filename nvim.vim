@@ -40,10 +40,11 @@ set backupdir=~/.cache/vim " Backup files Dir
 set dir=~/.cache/vim " Swap files Dir
 " set confirm " Confirmation unsaved file.
 autocmd BufWritePre * %s/\s\+$//e " Remove white space
+set noswapfile " Disable swap files
 
-"### Indention
+" ### Indention
 set tabstop=2 " Tab size
-set autoindent
+" set autoindent
 set softtabstop=2
 set shiftwidth=2
 set smartindent	" Enable smart-indent
@@ -108,6 +109,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" Programming Language
 	Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'npm i'}	" Markdown Preview
+	Plug 'lepture/vim-jinja' " Nunjucks
 call plug#end()
 
 " Wal
