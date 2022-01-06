@@ -124,7 +124,7 @@ keys = [
         [mod, 'shift'], 'm',
         lazy.spawn(Commands.micDown),
         desc='Lower the Volume'
-    )
+    ),
     # Brightness
     Key(
         # [mod], 'XF86MonBrightnessUp',
