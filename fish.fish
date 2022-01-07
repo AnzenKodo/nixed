@@ -4,8 +4,11 @@
 set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
-set -gx PATH $HOME/.local/bin:$PATH
 set -gx NIXED $XDG_CONFIG_HOME/nixed
+
+## Add Path
+fish_add_path $HOME/.local/bin
+fish_add_path $XDG_CONFIG_HOME/npm/bin
 
 #Import colors
 # . "$HOME/.cache/wal/colors.fish"
