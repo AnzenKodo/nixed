@@ -5,6 +5,7 @@ set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx NIXED $XDG_CONFIG_HOME/nixed
+set -gx PYTHONPATH $XDG_CONFIG_HOME/pip
 
 ## Add Path
 fish_add_path $HOME/.local/bin
