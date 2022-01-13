@@ -41,7 +41,7 @@ class Commands:
     volumeDown = 'amixer -q sset Master 5%-'
     volumeMute = 'amixer -c 0 -q set Master toggle'
     brightnessUp = 'bright +'
-    brightnessDown = '~/.local/bin/bright -'
+    brightnessDown = 'bright -'
     micUp = 'amixer set Capture 5%+'
     micDown = 'amixer set Capture 5%-'
     dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
@@ -129,13 +129,13 @@ keys = [
     Key(
         # [mod], 'XF86MonBrightnessUp',
         [mod], 'b',
-        lazy.function(Commands.brightnessUp),
+        lazy.spawn(Commands.brightnessUp),
         desc='Brightness up'
     ),
     Key(
         # [], 'XF86MonBrightnessDown',
         [mod, 'shift'], 'b',
-        lazy.function(Commands.brightnessDown),
+        lazy.spawn(Commands.brightnessDown),
         desc='Brightness down'
     ),
 
