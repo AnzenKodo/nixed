@@ -387,7 +387,7 @@ wmname = 'LG3D'
 
 floating_layout = layout.Floating(
     float_rules=[
-        *layout.Floating.defaults,
+        *layout.Floating.default_float_rule,
         Match(wm_class='confirmreset'),  # gitk
         Match(wm_class='makebranch'),  # gitk
         Match(wm_class='maketag'),  # gitk
