@@ -84,7 +84,14 @@
     # printing.enable = true;
 
     # openssh.enable = true;
+
+    # Bluetooth
+    blueman.enable = true;
   };
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  programs.light.enable = true;
 
   fonts.fonts = with pkgs; [
     jetbrains-mono
@@ -94,7 +101,7 @@
     # Users
     ramen = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Root user
+      extraGroups = [ "wheel" "video" ]; # Root user
       shell = pkgs.fish;
     };
     # Disable root password

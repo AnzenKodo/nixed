@@ -304,15 +304,15 @@ screens = [
                     fmt=' 🔊 {} |',
                     # emoji=True,
                 ),
-                # widget.Backlight(
-                #     backlight_name=Commands.backlight_name,
-                #     format=' ☀️ {percent:1.0%} |',
-                # ),
+                widget.Backlight(
+                    backlight_name=Commands.backlight_name,
+                    format=' ☀️ {percent:1.0%} |',
+                ),
                 widget.Battery(
                     foreground=Style.fontColor,
                     background=Style.background,
                     low_background=Style.important,
-                    format=' {char} {percent:2.0%}',
+                    format=' {char} {percent:2.0%} ',
                     notify_below=30,
                     discharge_char='🔋',
                     charge_char='⚡',
@@ -326,10 +326,10 @@ screens = [
                 ),
                 widget.Net(
                     interface=Commands.network_interface,
-                    format=' {down} 🔻🔺 {up} |'
+                    format=' {down} 🔻🔺 {up} '
                 ),
                 widget.Clock(
-                    format=' 📅 %Y-%b-%d %a | 🕒 %I:%M%p '
+                    format='| 📅 %Y-%b-%d %a | 🕒 %I:%M%p '
                 ),
                 # widget.CheckUpdates(
                 #     display_format=' ⬆️ {updates} Updates ',

@@ -85,13 +85,12 @@
         clipmenu        # Clipboard
 
         # Terminal
-        curl   	  # Downloaded
-        pywal  	  # Generate color schemes
-        alsaUtils # Volume Management
-        trash-cli # rm put trash bin
-        fish      # Shell
-        libnotify # Sends desktop notifications to a notification daemon
-
+        curl            # Downloaded
+        pywal           # Generate color schemes
+        alsaUtils       # Volume Management
+        trash-cli       # rm put trash bin
+        fish            # Shell
+        libnotify       # Sends desktop notifications to a notification daemon
         # Programming
         nodejs  # Node.JS
       ];
