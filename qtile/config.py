@@ -245,8 +245,8 @@ extension_defaults = widget_defaults.copy()
 
 
 # Notification format
-def format_text(text):
-    return re.sub(' +', ' ', text.strip().replace('\n', ' '))
+# def format_text(text):
+#     return re.sub(' +', ' ', text.strip().replace('\n', ' '))
 
 
 screens = [
@@ -284,7 +284,7 @@ screens = [
                     fmt=' 💬 {} ',
                     fontsize=15,
                     action=False,
-                    parse_text=format_text
+                    # parse_text=format_text
                 ),
                 widget.Spacer(
                     background=Style.line
