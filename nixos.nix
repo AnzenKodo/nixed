@@ -91,7 +91,7 @@
 
   # Bluetooth
   hardware.bluetooth.enable = true;
-  programs.light.enable = true;
+  hardware.acpilight.enable = true;
 
   fonts.fonts = with pkgs; [
     jetbrains-mono
