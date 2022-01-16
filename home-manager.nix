@@ -91,6 +91,8 @@
         trash-cli       # rm put trash bin
         fish            # Shell
         libnotify       # Sends desktop notifications to a notification daemon
+        unzip
+
         # Programming
         nodejs  # Node.JS
       ];
