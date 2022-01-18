@@ -122,6 +122,7 @@ let g:rainbow_active = 1 " Active Plug-in
 let b:ale_fixers = {'typescript': ['prettier', 'xo']}
 let b:ale_fixers = {'javascript': ['prettier', 'xo']}
 let b:ale_fixers = {'svelte': ['prettier', 'xo']}
+let b:ale_fixers = {'svelte': ['prettier']}
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
