@@ -119,10 +119,7 @@ colorscheme wal
 let g:rainbow_active = 1 " Active Plug-in
 
 " A.L.E
-let b:ale_fixers = {'typescript': ['prettier', 'xo']}
-let b:ale_fixers = {'javascript': ['prettier', 'xo']}
-let b:ale_fixers = {'svelte': ['prettier', 'xo']}
-let b:ale_fixers = {'svelte': ['prettier']}
+let b:ale_fixers = ['prettier', 'xo']
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
@@ -130,6 +127,13 @@ let g:ale_completion_autoimport = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_sign_error = '🔴'
 let g:ale_sign_warning = '⭕'
+
+" Run linters only when I save files
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Light line
 let g:lightline = { 'colorscheme': 'one' }
