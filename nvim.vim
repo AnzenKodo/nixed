@@ -1,7 +1,7 @@
 " Key bindings
-let mapleader=" "
+let mapleader='\'
 
-"## Changed Key bindings
+" ## Changed Key bindings
 
 "### Don't unselected after < & >
 vmap < <gv
@@ -17,7 +17,7 @@ nnoremap S :%s//gI<Left><Left><Left>
 
 "### Detect file type
 filetype on " Enable type file detection
-filetype plugin on " Plug-in for detected file
+" filetype plugin on " Plug-in for detected file
 filetype indent on " Indent for current file
 
 "### Fix
@@ -106,6 +106,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'gko/vim-coloresque'			" Color Preview
 	Plug 'itchyny/lightline.vim'	" Status bar
 	Plug 'airblade/vim-gitgutter' " Git
+	Plug 'vimwiki/vimwiki'				" Wiki & Note taking
 
 	" Programming Language
 	Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'npm i'}	" Markdown Preview
@@ -137,5 +138,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Light line
 let g:lightline = { 'colorscheme': 'one' }
-
 let g:instant_markdown_autostart = 0
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/Notes',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
