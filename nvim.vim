@@ -53,8 +53,9 @@ set smarttab	" Enable smart-tabs
 "## Applications
 
 "### Search
-set incsearch " Ignore capital letter in Search
-set smartcase " Case-sensitive in Search
+set incsearch
+set ignorecase " Ignore capital letter in Search
+" set smartcase " Case-sensitive in Search
 set showmatch " Matching words in search
 set hlsearch " Highlighting Search
 
@@ -83,7 +84,7 @@ set showmatch	"	Matching brace
 " set termguicolors "Enable true color
 
 "### Side Bar
-" set relativenumber " Numbers scroll
+set relativenumber " Numbers scroll
 set ruler " Show cursor
 
 "### Bottom Bar
@@ -141,5 +142,6 @@ let g:lightline = { 'colorscheme': 'one' }
 let g:instant_markdown_autostart = 0
 
 " Vimwiki
-let g:vimwiki_list = [{'path': '~/Documents/Notes',
+let g:vimwiki_list = [{'path': '~/Documents/notes',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_index = "README"

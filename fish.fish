@@ -28,7 +28,8 @@ alias ls="ls -A"
 alias mkdir="mkdir -v"
 alias nixed="cd $NIXED"
 alias startq="startx /usr/bin/env qtile -c ~/.config/nixed/qtile/config.py"
-
+alias note="nvim ~/Documents/notes/index.md"
+alias todo="nvim ~/Documents/notes/Todo.md"
 # Start Window Manger
 if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
