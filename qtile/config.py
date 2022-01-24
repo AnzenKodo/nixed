@@ -301,8 +301,8 @@ screens = [
                 #     prefix_long_break='🎉',
                 # ),
                 widget.Volume(
-                    fmt=' 🔊 {} |',
-                    # emoji=True,
+                    # fmt=' 🔊 {} |',
+                    emoji=True,
                 ),
                 widget.Backlight(
                     backlight_name=Commands.backlight_name,

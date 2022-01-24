@@ -131,8 +131,8 @@ let g:ale_sign_error = '🔴'
 let g:ale_sign_warning = '⭕'
 
 " Run linters only when I save files
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
