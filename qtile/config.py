@@ -301,8 +301,8 @@ screens = [
                 #     prefix_long_break='🎉',
                 # ),
                 widget.Volume(
-                    # fmt=' 🔊 {} |',
-                    emoji=True,
+                    fmt=' 🔊 {} |',
+                    # emoji=True,
                 ),
                 widget.Backlight(
                     backlight_name=Commands.backlight_name,
@@ -336,7 +336,7 @@ screens = [
                 #     background=Style.important,
                 #     distro=Commands.distribution,
                 # ),
-                # widget.StatusNotifier()
+                widget.StatusNotifier()
             ],
             25,
             margin=[5, 5, 0, 5],
