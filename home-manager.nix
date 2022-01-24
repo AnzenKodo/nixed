@@ -95,6 +95,7 @@
 
         # Programming
         nodejs  # Node.JS
+        deno
       ];
     };
     xdg = {
