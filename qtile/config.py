@@ -336,7 +336,7 @@ screens = [
                 #     background=Style.important,
                 #     distro=Commands.distribution,
                 # ),
-                widget.StatusNotifier()
+                # widget.StatusNotifier()
             ],
             25,
             margin=[5, 5, 0, 5],
