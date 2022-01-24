@@ -27,7 +27,7 @@ alias grep="grep -i"
 alias ls="ls -A"
 alias mkdir="mkdir -v"
 alias nixed="cd $NIXED"
-alias startq="startx /usr/bin/env qtile -c ~/.config/nixed/qtile/config.py"
+alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py"
 alias note="nvim ~/Documents/notes/index.md"
 alias todo="nvim ~/Documents/notes/Todo.md"
 # Start Window Manger
