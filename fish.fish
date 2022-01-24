@@ -6,10 +6,12 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx NIXED $XDG_CONFIG_HOME/nixed
 set -gx PYTHONPATH $XDG_CONFIG_HOME/pip
+set -gx DENO_INSTALL_ROOT $XDG_CONFIG_HOME/deno
 
 ## Add Path
 fish_add_path $HOME/.local/bin
 fish_add_path $XDG_CONFIG_HOME/npm/bin
+fish_add_path $XDG_CONFIG_HOME/deno/bin
 
 #Import colors
 # . "$HOME/.cache/wal/colors.fish"
