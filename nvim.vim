@@ -121,7 +121,7 @@ colorscheme wal
 let g:rainbow_active = 1 " Active Plug-in
 
 " A.L.E
-let b:ale_fixers = ['prettier', 'xo']
+" let b:ale_fixers = ['prettier', 'xo']
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1

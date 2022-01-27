@@ -90,8 +90,7 @@
         alsaUtils       # Volume Management
         trash-cli       # rm put trash bin
         fish            # Shell
-        libnotify       # Sends desktop notifications to a notification daemon
-        unzip
+        python39Packages.dbus-next
 
         # Programming
         nodejs  # Node.JS
