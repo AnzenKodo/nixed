@@ -85,12 +85,14 @@
         clipmenu        # Clipboard
 
         # Terminal
-        curl            # Downloaded
-        pywal           # Generate color schemes
-        alsaUtils       # Volume Management
-        trash-cli       # rm put trash bin
-        fish            # Shell
-        python39Packages.dbus-next
+        curl                        # Downloaded
+        pywal                       # Generate color schemes
+        alsaUtils                   # Volume Management
+        trash-cli                   # rm put trash bin
+        fish                        # Shell
+        lsd                         # The next gen ls command
+        zoxide                      # A smarter cd command
+        python310Packages.dbus-next  # DBus library for Qtile
 
         # Programming
         nodejs  # Node.JS
