@@ -19,16 +19,15 @@ fish_add_path $XDG_CONFIG_HOME/deno/bin
 
 # Alias
 # alias drun="dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15""
-alias icat="kitty +kitten icat"
+alias icat="kitty +kitten icat" # Show image in terminal
 alias rm="trash-put"
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias bash="bash -o vi"
 alias cal="cal -y"
 alias grep="grep -i"
-alias ls="ls -A"
+alias ls="ls -A --color=always"
 alias mkdir="mkdir -v"
-alias nixed="cd $NIXED"
 alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py"
 alias note="nvim ~/Documents/notes/index.md"
 alias todo="nvim ~/Documents/notes/Todo.md"
@@ -48,6 +47,44 @@ set fish_greeting
 # Vi mode
 fish_vi_key_bindings
 
+### fish function to extract generic compressed archives ###
+
+function ex
+	if test $argv && test -e $argv
+		switch $argv
+		case '*.tar.bz2'
+			tar xjf $argv
+		case '*.tar.gz'
+			tar xzf $argv
+		case "*.bz2"
+			bunzip2 $argv
+		case "*.rar"
+			unar x $argv
+		case "*.gz"
+			gunzip $argv
+		case "*.tar"
+			tar xf $argv
+		case "*.tbz2"
+			tar xjf $argv
+		case "*.tgz"
+			tar xzf $argv
+		case "*.zip"
+			unzip $argv
+		case "*.Z"
+			uncompress $argv
+		case "*.7z"
+			7z x $argv
+		case "*.deb"
+			ar x $argv
+		case "*.tar.xz"
+			tar xf $argv
+		case '*'
+			echo "Could not determine file type or cannot be extracted"
+		end
+	else
+		echo "No file provided"
+	end
+end
 
 ### zoxide ###
 

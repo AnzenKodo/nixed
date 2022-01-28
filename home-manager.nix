@@ -90,8 +90,8 @@
         alsaUtils                   # Volume Management
         trash-cli                   # rm put trash bin
         fish                        # Shell
-        lsd                         # The next gen ls command
         zoxide                      # A smarter cd command
+        unzip                       # unzip file
         python310Packages.dbus-next  # DBus library for Qtile
 
         # Programming
