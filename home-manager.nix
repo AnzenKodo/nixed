@@ -92,7 +92,7 @@
         fish                        # Shell
         zoxide                      # A smarter cd command
         unzip                       # unzip file
-        python310Packages.dbus-next  # DBus library for Qtile
+        python39Packages.dbus-next  # DBus library for Qtile
 
         # Programming
         nodejs  # Node.JS
