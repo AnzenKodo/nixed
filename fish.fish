@@ -32,7 +32,6 @@ alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py
 alias note="nvim ~/Documents/notes/index.md"
 alias todo="nvim ~/Documents/notes/Todo.md"
 alias tree="find . | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"
-alias cd="z"
 # Start Window Manger
 if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
@@ -428,3 +427,5 @@ function fish_prompt
     echo -n "$prompt_symbol "
     set_color normal
 end
+
+alias cd='z'
