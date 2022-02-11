@@ -76,7 +76,6 @@
           source ~/.config/nixed/fish.fish
         '';
         ".config/git/config".source = ./git.init;
-        ".config/qtile".source = ./qtile;
       };
 
       packages = with pkgs; [
