@@ -14,3 +14,5 @@
 	token = token
 [pull]
   rebase = merges
+[push]
+	default = current
