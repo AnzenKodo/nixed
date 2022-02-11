@@ -6,11 +6,11 @@
       home-manager.enable = true;
 
       # VCS
-      git = {
-        enable = true;
-        userName  = "AnzenKodo";
-        userEmail = "AnzenKodo@altmails.com";
-      };
+      /* git = { */
+      /*   enable = true; */
+      /*   userName  = "AnzenKodo"; */
+      /*   userEmail = "AnzenKodo@altmails.com"; */
+      /* }; */
 
       # Editor
       neovim = {
@@ -75,6 +75,7 @@
         ".config/fish/config.fish".text = ''
           source ~/.config/nixed/fish.fish
         '';
+        ".config/git/config".source = ./git.init;
       };
 
       packages = with pkgs; [
@@ -92,6 +93,7 @@
         fish                        # Shell
         zoxide                      # A smarter cd command
         unzip                       # unzip file
+        git                         # Version management system
         python39Packages.dbus-next  # DBus library for Qtile
 
         # Programming

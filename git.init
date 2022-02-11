@@ -1,0 +1,16 @@
+[user]
+	name = Tesura
+  username = AnzenKodo
+  email = AnzenKodo@altmails.com
+[core]
+	editor = nvim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager = cat
+[color]
+  # Enable colors in color-supporting terminals
+  ui = auto
+[github]
+	user = pksunkara
+	token = token
+[pull]
+  rebase = merges
