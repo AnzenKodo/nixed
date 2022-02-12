@@ -8,8 +8,8 @@ import subprocess
 import re
 
 colors = []
-cache = f"/home/{os.getlogin()}/.cache/wal/colors"
-wallpaper_location = f"/home/{os.getlogin()}/.cache/background.jpg"
+cache = f'/home/{os.getlogin()}/.cache/wal/colors'
+wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
 
 def load_colors(cache):
     with open(cache, 'r') as file:
@@ -95,14 +95,14 @@ keys = [
         desc='Shutdown Qtile'
     ),
     # Volume
+    # [], 'XF86AudioRaiseVolume',
     Key(
-        # [], 'XF86AudioRaiseVolume',
         [mod], 'v',
         lazy.spawn(Commands.volumeUp),
         desc='Increase the Volume'
     ),
+    # [], 'XF86AudioLowerVolume',
     Key(
-        # [], 'XF86AudioLowerVolume',
         [mod, 'shift'], 'v',
         lazy.spawn(Commands.volumeDown),
         desc='Lower the Volume'
@@ -173,16 +173,16 @@ for key in ['up', 'down', 'left', 'right']:
         Key(
             [mod], key.capitalize(),
             getattr(lazy.layout, key)(),
-            desc=f"Move focus {key}"
+            desc=f'Move focus {key}'
         ),
         Key(
             [mod, 'shift'], key.capitalize(),
-            getattr(lazy.layout, "shuffle_" + key)(),
-            desc=f"Move window {key}"
+            getattr(lazy.layout, 'shuffle_' + key)(),
+            desc=f'Move window {key}'
         ),
         Key(
             [mod, 'control'], key.capitalize(),
-            getattr(lazy.layout, "grow_" + key)(),
+            getattr(lazy.layout, 'grow_' + key)(),
             desc=f'Grow window {key}'
         ),
     ])
@@ -208,8 +208,8 @@ for i in groups:
     ])
 
 layout_theme = {
-    "border_width": 2,
-    "border_focus": colors[1]
+    'border_width': 2,
+    'border_focus': colors[1]
 }
 
 layouts = [
@@ -219,17 +219,17 @@ layouts = [
 
 mouse = [
     Drag(
-        [mod], "Button1",
+        [mod], 'Button1',
         lazy.window.set_position_floating(),
         start=lazy.window.get_position()
     ),
     Drag(
-        [mod], "Button3",
+        [mod], 'Button3',
         lazy.window.set_size_floating(),
         start=lazy.window.get_size()
     ),
     Click(
-        [mod], "Button2",
+        [mod], 'Button2',
         lazy.window.bring_to_front()
     )
 ]

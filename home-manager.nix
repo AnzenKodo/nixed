@@ -87,7 +87,7 @@
 
         # Terminal
         curl                        # Downloaded
-        pywal                       # Generate color schemes
+        wpgtk                       # Generate color schemes
         alsaUtils                   # Volume Management
         trash-cli                   # rm put trash bin
         fish                        # Shell
