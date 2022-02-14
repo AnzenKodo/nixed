@@ -21,7 +21,7 @@ fish_add_path $XDG_CONFIG_HOME/deno/bin
 # alias drun="dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15""
 alias icat="kitty +kitten icat" # Show image in terminal
 alias rm="trash-put"
-alias cp="cp -iv"
+alias cp="cp -ivr"
 alias mv="mv -iv"
 alias bash="bash -o vi"
 alias cal="cal -y"
@@ -32,6 +32,7 @@ alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py
 alias note="nvim ~/Documents/notes/README.md"
 alias todo="nvim ~/Documents/notes/Todo.md"
 alias tree="find . | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"
+
 # Start Window Manger
 if [ (tty) = "/dev/tty1" ]
     pgrep qtile || startq
