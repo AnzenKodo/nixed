@@ -100,7 +100,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'dylanaraps/wal.vim'			" Color scheme
 	Plug 'sheerun/vim-polyglot'		" Syntax highlighting
 	Plug 'tpope/vim-commentary'		" Comment
-	Plug 'jiangmiao/auto-pairs'		" Join pairs
+	" Plug 'jiangmiao/auto-pairs'		" Join pairs
 	Plug 'tpope/vim-surround'			" Change pairs
 	Plug 'luochen1990/rainbow'		" Rainbow parentheses
 	Plug 'dense-analysis/ale'			" Lintier, Formatter, Code Completion
