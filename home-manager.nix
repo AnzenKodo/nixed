@@ -97,8 +97,9 @@
         python39Packages.dbus-next  # DBus library for Qtile
 
         # Programming
-        nodejs  # Node.JS
-        deno
+        nodejs      # JS backend runtime
+        deno        # JS backend runtime
+        commitizen  # Make proper commit
       ];
     };
     xdg = {

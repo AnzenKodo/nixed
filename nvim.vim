@@ -29,7 +29,6 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-
 "### Memory
 set history=1000 " History Size
 set undolevels=1000	" Undo History
@@ -61,11 +60,19 @@ set hlsearch " Highlighting Search
 
 "### Wild menu
 set wildmenu " Auto Completion
-set wildmode=list:longest,full " Wild mode like Bash
+set wildignorecase " Ignore capital letter in Wildmode
+" set wildmode=list:longest,full " Wild mode like Bash
+set wildoptions-=pum " Horizontal wildmode
 set showcmd " Similar command
 
-"### Other
+"### Spell Check
 set spell " Spell checking
+hi SpellBad cterm=underline
+hi SpellLocal cterm=underline
+hi SpellRare cterm=underline
+hi SpellCap cterm=underline
+
+"### Other
 set backspace=indent,eol,start " Backspace interaction
 set clipboard=unnamedplus " System Clipboard
 
@@ -97,22 +104,33 @@ set mouse=
 
 " Plug ins
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'dylanaraps/wal.vim'			" Color scheme
-	Plug 'sheerun/vim-polyglot'		" Syntax highlighting
-	Plug 'tpope/vim-commentary'		" Comment
-	" Plug 'jiangmiao/auto-pairs'		" Join pairs
-	Plug 'tpope/vim-surround'			" Change pairs
-	Plug 'luochen1990/rainbow'		" Rainbow parentheses
-	Plug 'dense-analysis/ale'			" Lintier, Formatter, Code Completion
-	Plug 'gko/vim-coloresque'			" Color Preview
-	Plug 'itchyny/lightline.vim'	" Status bar
-	Plug 'airblade/vim-gitgutter' " Git
-	Plug 'vimwiki/vimwiki'				" Wiki & Note taking
+	Plug 'dylanaraps/wal.vim'						" Color scheme
+	Plug 'sheerun/vim-polyglot'					" Syntax highlighting
+	Plug 'tpope/vim-commentary'					" Comment
+	Plug 'tpope/vim-surround'						" Change pairs
+	Plug 'luochen1990/rainbow'					" Rainbow parentheses
+	Plug 'dense-analysis/ale'						" Lintier, Formatter, Code Completion
+	Plug 'lilydjwg/colorizer'						" Color Preview
+	Plug 'itchyny/lightline.vim'				" Status bar
+	Plug 'vimwiki/vimwiki'							" Wiki & Note taking
+	Plug 'Yggdroot/indentLine'					" Indention
+	Plug 'dominikduda/vim_current_word' " Highlight current word under cursor
+	Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
+	Plug 'svermeulen/vim-cutlass'				" Makes 'cut' operation separate from 'delete'
+	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+
+	" Only Works on NeoVim
+	Plug 'ZhiyuanLck/smart-pairs'
 
 	" Programming Language
-	Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'npm i'}	" Markdown Preview
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm i'  }	" Markdown Preview
 	Plug 'lepture/vim-jinja' " Nunjucks
+	Plug 'mattn/emmet-vim'	 " HTML
 call plug#end()
+
+lua << EOF
+require('pairs'):setup()
+EOF
 
 " Wal
 colorscheme wal
@@ -145,3 +163,10 @@ let g:instant_markdown_autostart = 0
 let g:vimwiki_list = [{'path': '~/Documents/notes',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_index = "README"
+
+" indentLine
+" let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['⁞']
+let g:markdown_syntax_conceal=0
+let g:vim_json_conceal=0
+let g:indentLine_fileTypeExclude = ['vimwiki']
