@@ -31,6 +31,7 @@ alias mkdir="mkdir -v"
 alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py"
 alias note="nvim ~/Documents/notes/README.md"
 alias todo="nvim ~/Documents/notes/Todo.md"
+alias spell="nvim ~/.config/nixed/vim/spell.add"
 alias tree="find . | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"
 
 # Start Window Manger

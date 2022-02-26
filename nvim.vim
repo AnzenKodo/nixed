@@ -66,11 +66,12 @@ set wildoptions-=pum " Horizontal wildmode
 set showcmd " Similar command
 
 "### Spell Check
-set spell " Spell checking
+" set spell " Spell checking
 hi SpellBad cterm=underline
 hi SpellLocal cterm=underline
 hi SpellRare cterm=underline
 hi SpellCap cterm=underline
+set spellfile=~/.config/nixed/vim/en.utf-8.add
 
 "### Other
 set backspace=indent,eol,start " Backspace interaction
@@ -116,7 +117,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'Yggdroot/indentLine'					" Indention
 	Plug 'dominikduda/vim_current_word' " Highlight current word under cursor
 	Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
-	Plug 'svermeulen/vim-cutlass'				" Makes 'cut' operation separate from 'delete'
 	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 	" Only Works on NeoVim
@@ -124,8 +124,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" Programming Language
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm i'  }	" Markdown Preview
-	Plug 'lepture/vim-jinja' " Nunjucks
-	Plug 'mattn/emmet-vim'	 " HTML
+	Plug 'lepture/vim-jinja'	" Nunjucks
+	Plug 'mattn/emmet-vim'		" HTML
+	Plug 'LnL7/vim-nix'				" Nix
 call plug#end()
 
 lua << EOF

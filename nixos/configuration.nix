@@ -7,11 +7,14 @@
 
       # Home Manager
       "${ builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz }/nixos"
-      /home/ramen/.config/nixed/home-manager.nix
+      /home/ramen/.config/nixed/nixos/home.nix
     ];
 
   nix = {
+    # Make NixOS use unstable branch
     package = pkgs.nixUnstable;
+
+    # Enable Nix Flakes
     extraOptions = ''
         experimental-features = nix-command flakes
       '';
@@ -43,6 +46,8 @@
     };
 
     # DNS
+    # Use's 1.1.1.1 DNS family version
+    # More info -> https://one.one.one.one/family/
     nameservers = [ "1.1.1.3" "1.0.0.3" ];
 
     # hostName = "nixos"; # Device Hostname
@@ -64,20 +69,14 @@
       enable = true;
 
       # Desktop Environment
+      # For minimalist reasons I just startx and it work just fine ;)
       displayManager.startx.enable = true;
-      desktopManager.xterm.enable = false;
+
+      # To know more about qtile see qtile folder for more information like keyboard shortcut.
       windowManager.qtile.enable = true;
 
-      # Touch pad Support
+      # Laptop Touchpad Support
       libinput.enable = true;
-    };
-
-    # Volume Server
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
     };
 
     # Printing support
@@ -89,10 +88,19 @@
     blueman.enable = true;
   };
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.acpilight.enable = true;
+  hardware = {
+    # Bluetooth
+    bluetooth.enable = true;
+    acpilight.enable = true;
 
+    # Audio Server
+    pulseaudio.enable = true;
+   }
+
+  # Save volume state on shutdown
+  sound.enable = true;
+
+  # System fonts
   fonts.fonts = with pkgs; [
     jetbrains-mono
   ];
@@ -101,16 +109,20 @@
     # Users
     ramen = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" ]; # Root user
+      extraGroups = [ "wheel" "video" "audio" ]; # Root user
       shell = pkgs.fish;
     };
+
     # Disable root password
     root.hashedPassword = "!";
   };
 
-  # Updates
+  # System Updates
   system = {
+    # The version that system usages
     stateVersion = "unstable";
+
+    # Enable auto update for security purpose
     autoUpgrade = {
       enable = true;
       allowReboot = false; # Auto Reboot after update
@@ -118,10 +130,6 @@
   };
 
   programs.ssh.startAgent = true;
-
-  # Gnome Keyring
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.startx.enableGnomeKeyring = true;
 
   # Audio server uses this to acquire real-time priority
   security.rtkit.enable = true;
@@ -133,4 +141,3 @@
     keyMap = "us";
   };
 }
-
