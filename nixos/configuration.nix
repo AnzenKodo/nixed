@@ -95,7 +95,7 @@
 
     # Audio Server
     pulseaudio.enable = true;
-   }
+   };
 
   # Save volume state on shutdown
   sound.enable = true;
@@ -106,7 +106,8 @@
   ];
 
   users.users = {
-    # Users
+    # User
+    # You can change the 'ramen' to your username of choice
     ramen = {
       isNormalUser = true;
       extraGroups = [ "wheel" "video" "audio" ]; # Root user
@@ -129,6 +130,7 @@
     };
   };
 
+  # SSH server
   programs.ssh.startAgent = true;
 
   # Audio server uses this to acquire real-time priority
