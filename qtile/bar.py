@@ -97,9 +97,9 @@ screens = [
         #             unknown_char='',
         #             show_short_text=False
         #         ),
-        #         widget.Memory(
-        #             format='| 📊{MemUsed: .0f}MB |',
-        #         ),
+                widget.Memory(
+                    format='| 📊{MemUsed: .0f}MB |',
+                ),
                 widget.Net(
                     # interface=Commands.network_interface,
                     format=' {down} 🔻🔺 {up} '
