@@ -44,6 +44,7 @@ class Commands:
     brightnessDown = 'xbacklight -dec 1'
     micUp = 'amixer set Capture 1%+'
     micDown = 'amixer set Capture 1%-'
+    micMute = 'amixer set Capture 0'
     dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
     clipboard = f'clipmenu -i -b -p "✀" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
 
@@ -51,120 +52,125 @@ class Commands:
 mod = 'mod4'
 
 keys = [
-    # WM
-    Key(
-        [mod], 'space',
-        #lazy.layout.next(),
-        lazy.window.toggle_fullscree(),
-        desc='Move window focus to other window'
-    ),
-    Key(
-        [mod], 'f',
-        lazy.window.toggle_floating(),
-        desc='Make floating window'
-    ),
-    Key(
-        [mod], 'r',
-        lazy.layout.normalize(),
-        desc='Reset all window sizes'
-    ),
-    Key(
-        [mod, 'shift'], 'r',
-        lazy.layout.toggle_split(),
-        desc='Toggle between split and unsplit sides of stack'
-    ),
-    Key(
-        [mod], 'Tab',
-        lazy.next_layout(),
-        desc='Toggle between layouts'
-    ),
-    Key(
-        [mod], 'q',
-        lazy.window.kill(),
-        desc='Kill focused window'
-    ),
+    # Qtile
     Key(
         [mod, 'control'], 'r',
         lazy.reload_config(),
         # lazy.spawn('qtile-cmd -o cmd -f restart &> /dev/null'),
-        desc='Reload the config'
+        desc='Reload config Qtile'
     ),
     Key(
         [mod, 'control'], 'q',
         lazy.shutdown(),
-        desc='Shutdown Qtile'
+        desc='Quite Qtile'
+    ),
+    # Window
+    Key(
+        [mod], 'q',
+        lazy.window.kill(),
+        desc='Close window'
+    ),
+    Key(
+        [mod], 'space',
+        #lazy.layout.next(),
+        lazy.window.toggle_fullscreen(),
+        desc='Fullscreen window'
+    ),
+    Key(
+        [mod], 'f',
+        lazy.window.toggle_floating(),
+        desc='Floating window'
+    ),
+    Key(
+        [mod], 'Tab',
+        lazy.next_layout(),
+        desc='Switch window layout'
+    ),
+    Key(
+        [mod], 'r',
+        lazy.layout.normalize(),
+        desc='Normalize window'
+    ),
+    Key(
+        [mod, 'shift'], 'Tab',
+        lazy.layout.toggle_split(),
+        desc='Split window'
     ),
     # Volume
-    # [], 'XF86AudioRaiseVolume',
     Key(
+        # [], 'XF86AudioRaiseVolume',
         [mod], 'v',
         lazy.spawn(Commands.volumeUp),
-        desc='Increase the Volume'
+        desc='Increase Volume'
     ),
     # [], 'XF86AudioLowerVolume',
     Key(
         [mod, 'shift'], 'v',
         lazy.spawn(Commands.volumeDown),
-        desc='Lower the Volume'
+        desc='Decrease Volume'
     ),
     Key(
         # [], 'XF86AudioMute',
         [mod, 'control'], 'v',
         lazy.spawn(Commands.volumeMute),
-        desc='Mute the Volume'
+        desc='Mute Volume'
     ),
     # Mic Volume
     Key(
         [mod], 'm',
         lazy.spawn(Commands.micUp),
-        desc='Increase the Volume'
+        desc='Increase mic sensitivity'
     ),
     Key(
-        # [], 'XF86AudioLowerVolume',
         [mod, 'shift'], 'm',
         lazy.spawn(Commands.micDown),
-        desc='Lower the Volume'
+        desc='Decrease mic sensitivity'
+    ),
+    Key(
+        [mod, 'control'], 'm',
+        lazy.spawn(Commands.micMute),
+        desc='Mute mic'
     ),
     # Brightness
     Key(
         # [mod], 'XF86MonBrightnessUp',
         [mod], 'b',
         lazy.spawn(Commands.brightnessUp),
-        desc='Brightness up'
+        desc='Increase brightness'
     ),
     Key(
         # [], 'XF86MonBrightnessDown',
         [mod, 'shift'], 'b',
         lazy.spawn(Commands.brightnessDown),
-        desc='Brightness down'
+        desc='Decrease brightness'
     ),
 
     # Menu
     Key(
         [mod], 'Return',
         lazy.spawn(Commands.dmenu),
-        desc='Open application starter'
+        desc='Menu'
     ),
     Key(
         [mod], 'e',
         lazy.spawn('kitty'),
-        desc='Emoji selector'
+        desc='Emoji menu'
     ),
     Key(
         [mod], 'c',
         lazy.spawn(Commands.clipboard),
-        desc='Clipboard'
+        desc='Clipboard menu'
     ),
     # Application
     Key(
         [mod], 't',
         lazy.spawn(Commands.terminal),
-        desc='Open terminal'
+        desc='Terminal'
     ),
     Key(
         [mod], 'i',
         lazy.spawn(Commands.browser),
-        desc='Open browser'
+        desc='Browser'
     ),
 ]
 
@@ -173,7 +179,7 @@ for key in ['up', 'down', 'left', 'right']:
         Key(
             [mod], key.capitalize(),
             getattr(lazy.layout, key)(),
-            desc=f'Move focus {key}'
+            desc=f'Move window focus {key}'
         ),
         Key(
             [mod, 'shift'], key.capitalize(),
@@ -183,7 +189,7 @@ for key in ['up', 'down', 'left', 'right']:
         Key(
             [mod, 'control'], key.capitalize(),
             getattr(lazy.layout, 'grow_' + key)(),
-            desc=f'Grow window {key}'
+            desc=f'Grow window size {key}'
         ),
     ])
 
