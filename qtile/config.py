@@ -8,7 +8,8 @@ import subprocess
 import re
 
 from advance import *
-# from layout import *
+from layout import layouts, floating_layout
+# from mouses import mouse
 
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
 wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
@@ -359,22 +360,22 @@ def autostart():
 # auto_minimize = True
 # wmname = 'LG3D'
 
-float_rules=[
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-]
+# float_rules=[
+#     *layout.Floating.default_float_rules,
+#     Match(wm_class='confirmreset'),  # gitk
+#     Match(wm_class='makebranch'),  # gitk
+#     Match(wm_class='maketag'),  # gitk
+#     Match(wm_class='ssh-askpass'),  # ssh-askpass
+#     Match(title='branchdialog'),  # gitk
+#     Match(title='pinentry'),  # GPG key password entry
+# ]
 
-layout_theme = {
-    'border_width': 2,
-    'border_focus': colors[1]
-}
+# layout_theme = {
+#     'border_width': 2,
+#     'border_focus': colors[1]
+# }
 
-layouts = [
-    layout.Columns(**layout_theme),
-    layout.Max()
-]
+# layouts = [
+#     layout.Columns(**layout_theme),
+#     layout.Max()
+# ]

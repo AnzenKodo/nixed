@@ -1,3 +1,4 @@
+from libqtile.lazy import lazy
 import os
 
 # Loads generated colors from pywal
