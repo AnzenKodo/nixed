@@ -3,13 +3,12 @@ from libqtile import bar, layout, widget, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-import os
 import subprocess
 import re
 
 # import libqtile import widget, bar, extension
 # import libqtile.config import Screen
-# import os
+import os
 
 from variables.style import Style
 from variables.commands import Commands
