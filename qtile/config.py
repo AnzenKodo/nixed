@@ -6,7 +6,9 @@ from libqtile.utils import guess_terminal
 import os
 import subprocess
 import re
+
 from advance import *
+# from layout import *
 
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
 wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
@@ -215,16 +217,6 @@ for i in groups:
         ),
     ])
 
-layout_theme = {
-    'border_width': 2,
-    'border_focus': colors[1]
-}
-
-layouts = [
-    layout.Columns(**layout_theme),
-    layout.Max()
-]
-
 mouse = [
     Drag(
         [mod], 'Button1',
@@ -381,14 +373,34 @@ def autostart():
     home = os.path.expanduser('~/.config/nixed/qtile/autostart.sh')
     subprocess.call([home])
 
-floating_layout = layout.Floating(
-    float_rules=[
-        *layout.Floating.default_float_rules,
-        Match(wm_class='confirmreset'),  # gitk
-        Match(wm_class='makebranch'),  # gitk
-        Match(wm_class='maketag'),  # gitk
-        Match(wm_class='ssh-askpass'),  # ssh-askpass
-        Match(title='branchdialog'),  # gitk
-        Match(title='pinentry'),  # GPG key password entry
-    ]
-)
+
+# dgroups_key_binder = None
+# dgroups_app_rules = []  # type: List
+# follow_mouse_focus = False
+# bring_front_click = False
+# cursor_warp = False
+# auto_fullscreen = True
+# focus_on_window_activation = 'smart'
+# reconfigure_screens = True
+# auto_minimize = True
+# wmname = 'LG3D'
+
+float_rules=[
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+]
+
+layout_theme = {
+    'border_width': 2,
+    'border_focus': colors[1]
+}
+
+layouts = [
+    layout.Columns(**layout_theme),
+    layout.Max()
+]
