@@ -52,7 +52,7 @@ class Commands:
     dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
     clipboard = f'clipmenu -i -b -p "✀" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
 
-# `mod4` means `Enter`
+## `mod4` means `Enter`
 mod = 'mod4'
 
 keys = [
@@ -243,12 +243,6 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-
-# Notification format
-# def format_text(text):
-#     return re.sub(' +', ' ', text.strip().replace('\n', ' '))
-
-
 screens = [
     Screen(
         wallpaper=wallpaper_location,
@@ -346,26 +340,6 @@ screens = [
         right=bar.Gap(size=5),
         bottom=bar.Gap(size=5)
     ),
-]
-# Drag floating layouts.
-mouse = [
-    Drag(
-        [mod],
-        'Button1',
-        lazy.window.set_position_floating(),
-        start=lazy.window.get_position()
-    ),
-    Drag(
-        [mod],
-        'Button3',
-        lazy.window.set_size_floating(),
-        start=lazy.window.get_size()
-    ),
-    Click(
-        [mod],
-        'Button2',
-        lazy.window.bring_to_front()
-    )
 ]
 
 @ hook.subscribe.startup_once  # Autostart

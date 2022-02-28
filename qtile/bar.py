@@ -3,6 +3,7 @@ import libqtile.config import Screen
 import os
 
 from colors import Style
+
 widget_defaults = dict(
     background=Style.background,
     foreground=Style.fontColor,
