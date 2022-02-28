@@ -12,7 +12,7 @@ import re
 # import os
 
 from style import Style
-# from commands import Commands
+from commands import Commands
 
 widget_defaults = dict(
     background=Style.background,
@@ -23,12 +23,12 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-# wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
+wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
 
 screens = [
     Screen(
-        # wallpaper=wallpaper_location,
-        # wallpaper_mode='fill',
+        wallpaper=wallpaper_location,
+        wallpaper_mode='fill',
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(),
@@ -60,7 +60,6 @@ screens = [
                     fmt=' 💬 {} ',
                     fontsize=15,
                     action=False,
-                    # parse_text=format_text
                 ),
                 widget.Spacer(
                     background=Style.line
@@ -81,7 +80,7 @@ screens = [
                     # emoji=True,
                 ),
                 widget.Backlight(
-                    # backlight_name=Commands.backlight_name,
+                    backlight_name=Commands.backlight_name,
                     format=' ☀️ {percent:1.0%} |',
                 ),
                 widget.Battery(
@@ -101,7 +100,7 @@ screens = [
                     format='| 📊{MemUsed: .0f}MB |',
                 ),
                 widget.Net(
-                    # interface=Commands.network_interface,
+                    interface=Commands.network_interface,
                     format=' {down} 🔻🔺 {up} '
                 ),
                 widget.Clock(
