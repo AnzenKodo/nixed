@@ -1,3 +1,5 @@
+from typing import List
+
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = False
