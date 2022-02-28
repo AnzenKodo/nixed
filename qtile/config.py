@@ -199,7 +199,7 @@ for i in groups:
         Key(
             [mod], i.name,
             lazy.group[i.name].toscreen(),
-            desc=f'Switch to group {i.name}'
+            desc=f'Go to group {i.name}'
         ),
         Key(
             [mod, 'shift'], i.name,
@@ -207,7 +207,7 @@ for i in groups:
             desc=f'Switch to & move focused window to group {i.name}'
         ),
         Key(
-            [mod, 'shift'], i.name,
+            [mod, 'control'], i.name,
             lazy.window.togroup(i.name),
             desc=f'move focused window to group {i.name}'
         ),
