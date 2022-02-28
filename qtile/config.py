@@ -9,7 +9,10 @@ import re
 
 from advance import *
 from layout import layouts, floating_layout
-from bar import screens, extension_defaults
+from bar import screens, widget_defaults
+
+extension_defaults = widget_defaults.copy()
+
 from shortcuts import keys, groups
 from mouse import mouse
 
