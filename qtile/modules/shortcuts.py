@@ -1,9 +1,6 @@
 from libqtile.config import Group, Key
 from libqtile.lazy import lazy
-from commands import Commands
-
-# `mod4` means `Enter`
-mod = 'mod4'
+from variables.commands import Commands, mod
 
 keys = [
     # Qtile

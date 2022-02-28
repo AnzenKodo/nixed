@@ -1,5 +1,7 @@
 from libqtile.utils import guess_terminal
-from style import Style, colors
+from variables.style import Style, colors
+
+mod = 'mod4' # Mode set to enter
 
 class Commands:
     terminal = guess_terminal()

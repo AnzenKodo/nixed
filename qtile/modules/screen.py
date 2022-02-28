@@ -11,8 +11,8 @@ import re
 # import libqtile.config import Screen
 # import os
 
-from style import Style
-from commands import Commands
+from variables.style import Style
+from variables.commands import Commands
 
 widget_defaults = dict(
     background=Style.background,
@@ -21,10 +21,8 @@ widget_defaults = dict(
     fontsize=14,
     padding=0,
 )
-extension_defaults = widget_defaults.copy()
 
 wallpaper_location = f'/home/{os.getlogin()}/.cache/background.jpg'
-
 screens = [
     Screen(
         wallpaper=wallpaper_location,

@@ -1,6 +1,7 @@
 from libqtile.config import Click, Drag
 from libqtile.lazy import lazy
-from shortcuts import mod
+
+from variables.commands import mod
 
 mouse = [
     Drag(
