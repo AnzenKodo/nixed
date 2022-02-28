@@ -36,7 +36,7 @@
 
         # Default file '~/.config/kitty/kitty.conf' source this file
         extraConfig = ''
-          include ~/.config/nixed/kitty.conf
+          include ~/.config/nixed/kitty/includes.conf
         '';
       };
 

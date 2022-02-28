@@ -85,7 +85,7 @@ set clipboard=unnamedplus " System Clipboard
 " hi CursorLine guibg=#2f2f2f ctermfg=none
 
 "### Editor
-syntax on
+set syntax=on
 set number " Show numbers
 set showmatch	"	Matching brace
 " set colorcolumn=50 " Line size

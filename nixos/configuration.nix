@@ -1,3 +1,7 @@
+# To know more about how to setup nix goto --> https://nixos.org/manual/nixos
+# Find the options that you can use --> https://search.nixos.org/options
+# Find the packages that you can install --> https://search.nixos.org/packages
+
 { config, pkgs, ... }:
 
 {

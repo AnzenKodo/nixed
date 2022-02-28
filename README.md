@@ -1,13 +1,7 @@
 # Nixed (The dotfile OS)
 
-Nixed is dotfile OS which is built upon [NixOS](https://nixos.org). Nixed is configured with a high level of portable for minimalism and optimization.
+<div align="center">
+  <img alt="Nixed Logo" width="50%" src="https://raw.githubusercontent.com/AnzenKodo/assests/3aeed62e7bdde3f93f13a4b027a72b05fb6488b5/Nixed%20Logo%20Spacing.svg">
+</div>
 
-## Preinstall Software
-- OS - [NixOS](https://nixos.org)
-- Font           [Punk Mono](https://github.com/AnzenKodo/punk-mono)
-	- Window Manger  [Qtile](https://qtile.org)
-		- Browser        [Brave](https://brave.com)
-	- Terminal       [kitty](https://sw.kovidgoyal.net/kitty)
-		- Text Editor    [Neovim](https://neovim.io)
-		- Shell          [fish](https://fishshell.com)
-		- VCS            [git](htts://git-scm.com)
+Nixed is dotfile OS which is built upon [NixOS](https://nixos.org). Nixed is configured with a high level of portable for minimalism and optimization.
