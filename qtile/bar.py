@@ -100,10 +100,10 @@ screens = [
         #         widget.Memory(
         #             format='| 📊{MemUsed: .0f}MB |',
         #         ),
-        #         widget.Net(
-        #             # interface=Commands.network_interface,
-        #             format=' {down} 🔻🔺 {up} '
-        #         ),
+                widget.Net(
+                    # interface=Commands.network_interface,
+                    format=' {down} 🔻🔺 {up} '
+                ),
                 widget.Clock(
                     format='| 📅 %Y-%b-%d %a | 🕒 %I:%M%p '
                 ),
