@@ -27,6 +27,7 @@ call plug#end()
 
 " Loads Neovim plugins
 lua << EOF
+	-- smart-pairs
 	require('pairs'):setup()
 EOF
 

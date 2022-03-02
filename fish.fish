@@ -8,7 +8,7 @@ set -gx NIXED $XDG_CONFIG_HOME/nixed
 set -gx PYTHONPATH $XDG_CONFIG_HOME/pip
 set -gx DENO_INSTALL_ROOT $XDG_CONFIG_HOME/deno
 
-# set -gx PYTHONPYCACHEPREFIX $XDG_CACHE_HOME
+set -gx PYTHONPYCACHEPREFIX $XDG_CACHE_HOME
 ## Add Path
 fish_add_path $HOME/.local/bin
 fish_add_path $XDG_CONFIG_HOME/npm/bin
