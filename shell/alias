@@ -1,0 +1,16 @@
+#/usr/bin/env bash
+
+alias icat="kitty +kitten icat" # Show image in terminal
+alias rm="trash-put"
+alias cp="cp -ivr"
+alias mv="mv -iv"
+alias bash="bash -o vi"
+alias cal="cal -y"
+alias grep="grep -i"
+alias ls="ls -A --color=always"
+alias mkdir="mkdir -v"
+alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py"
+alias note="nvim ~/Documents/notes/README.md"
+alias todo="nvim ~/Documents/notes/Todo.md"
+alias spell="nvim ~/.config/nixed/vim/spell.add"
+alias tree="find . | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"

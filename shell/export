@@ -1,0 +1,8 @@
+export  XDG_CACHE_HOME=~/.cache
+export  XDG_CONFIG_HOME=~/.config
+export  XDG_DATA_HOME=~/.local/share
+export  NIXED=$XDG_CONFIG_HOME/nixed
+export  PYTHONPATH=$XDG_CONFIG_HOME/pip
+export  DENO_INSTALL_ROOT=$XDG_CONFIG_HOME/deno
+
+export PATH=$PATH:~/.local/bin:$XDG_CONFIG_HOME/npm/bin:$XDG_CONFIG_HOME/deno/bin

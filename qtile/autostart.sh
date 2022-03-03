@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Start the programs when Qtile starts.
+
 # Random Wallpaper
 $HOME/.local/bin/wallpaper &
 
@@ -9,13 +11,8 @@ $HOME/.local/bin/backup &
 # Disable keyboard
 xinput disable "AT Translated Set 2 keyboard"
 
-# Transparent window maker
+# Transparent window
 picom &
 
 # Clipboard
 clipmenud &
-
-# Gnome Key chain
-# eval $(gnome-keyring-daemon --start --components=ssh,secrets)
-# export SSH_AUTH_SOCK
-# dbus-update-activation-environment --systemd DISPLAY

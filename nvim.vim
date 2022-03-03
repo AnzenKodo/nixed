@@ -88,7 +88,7 @@ set clipboard=unnamedplus " System Clipboard
 set syntax=on
 set number " Show numbers
 set showmatch	"	Matching brace
-" set colorcolumn=50 " Line size
+set colorcolumn=80 " Line size
 " set termguicolors "Enable true color
 
 "### Side Bar

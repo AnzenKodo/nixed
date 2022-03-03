@@ -5,11 +5,14 @@
     programs = {
       home-manager.enable = true;
 
+      command-not-found.enable = true;
+
       # Editor
       neovim = {
         enable = true;
         viAlias = true;
         vimAlias = true;
+        vimdiffAlias = true;
 
         # This only install plugin manger other plugin's install through '../vim/plugin.vim' file.
         plugins = with pkgs.vimPlugins; [
@@ -89,6 +92,7 @@
         unzip                       # unzip zip files
         git                         # Version control system
         python39Packages.dbus-next  # DBus library for Qtile
+        patool                      # Portable archive file manager
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime

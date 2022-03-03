@@ -1,8 +1,8 @@
 from modules.advance import *
-from modules.layout import layouts, floating_layout
+from modules.layout import layouts
 from modules.screen import screens, widget_defaults
 from modules.shortcuts import keys, groups
-from modules.mouse import mouse
+from modules.floating_layout import floating_layout, mouse
 from modules.hooks import *
 import sys
 

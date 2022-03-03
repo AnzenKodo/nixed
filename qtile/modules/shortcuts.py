@@ -2,6 +2,10 @@ from libqtile.config import Group, Key
 from libqtile.lazy import lazy
 from variables.commands import Commands, mod
 
+# A list of available commands that can be bound to keys can be found
+# at https://docs.qtile.org/en/latest/manual/config/lazy.html
+
+# Qtile keyboard shortcuts
 keys = [
     # Qtile
     Key(
@@ -147,6 +151,7 @@ for key in ['up', 'down', 'left', 'right']:
         ),
     ])
 
+# Keyboard shortcut for Workspaces
 groups = [Group(i) for i in '123456789']
 for i in groups:
     keys.extend([

@@ -14,6 +14,7 @@ def load_colors(cache):
 
 load_colors(cache)
 
+# pywal colors simplify
 class Style:
     background = colors[0]
     line = colors[1]
