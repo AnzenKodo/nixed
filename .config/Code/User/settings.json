@@ -1,0 +1,130 @@
+{
+  // Editor,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.suggestSelection": "first",
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.tslint": true
+  },
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.linkedEditing": true,
+  /// Font
+  "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.letterSpacing": 0.4,
+  // Workbench
+  "workbench.startupEditor": "readme",
+  // "workbench.activityBar.visible": false,
+  "workbench.enableExperiments": false,
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.editor.showTabs": false,
+  // Window
+  "window.autoDetectColorScheme": true,
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "hidden",
+  // Explorer
+  "explorer.confirmDelete": false,
+  "explorer.incrementalNaming": "smart",
+  "explorer.confirmDragAndDrop": false,
+  // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 100,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
+  "files.insertFinalNewline": true,
+  // Git
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  // vim
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.cursorStylePerMode.visual": "underline-thin",
+  "vim.cursorStylePerMode.visualblock": "line-thin",
+  "vim.cursorStylePerMode.visualline": "block-outline",
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+  // Language
+  /// TypeScript
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.semicolons": "remove",
+  "typescript.preferences.quoteStyle": "single",
+  /// JavaScript
+  "javascript.format.semicolons": "remove",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  /// HTML
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  /// JSON
+  "json.maxItemsComputed": 20000,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // Zen Mode
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.silentNotifications": false,
+  // Spell Check
+  "cSpell.userWords": [
+    "Agioro",
+    "Checkmark",
+    "Filly Agioro",
+    "IIFE",
+    "aman",
+    "chmod",
+    "filly",
+    "msapplication",
+    "omnibox",
+    "public",
+    "repos",
+    "screencast"
+  ],
+  // Emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact",
+    "markdown": "html"
+  },
+  // Standard
+  "standard.run": "onType",
+  "standard.autoFixOnSave": true,
+  "standard.engine": "ts-standard",
+  // Others
+  "update.mode": "none",
+  "security.workspace.trust.untrustedFiles": "open",
+  "pomodoro.repeat": 6,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.activityBar.visible": false
+}

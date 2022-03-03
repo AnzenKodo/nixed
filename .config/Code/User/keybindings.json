@@ -1,0 +1,79 @@
+// Place your key bindings in this file to override the default
+[
+	{
+		"key": "shift+alt+down",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "editor.action.copyLinesUpAction",
+		"when": "editorTextFocus"
+	},
+	// Better Vim navigation
+	// {
+	// 	"key": "shift+;",
+	// 	"command": "vim.showQuickpickCmdLine",
+	// 	"when": "editorTextFocus && vim.mode != 'Insert'"
+	// },
+	// {
+	// 	"key": "shift+;",
+	// 	"command": "vim.showQuickpickCmdLine",
+	// 	"when": "inZenMode && vim.mode != 'Insert'"
+	// },
+	// {
+	// 	"key": "up",
+	// 	"command": "cursorUp",
+	// 	"when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+	// },
+	// {
+	// 	"key": "down",
+	// 	"command": "cursorDown",
+	// 	"when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+	// },
+	// Toggle between terminal and editor focus
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	// {
+	// 	"key": "ctrl+shift+up",
+	// 	"command": "-editor.action.insertCursorAbove",
+	// 	"when": "editorTextFocus"
+	// },
+	// {
+	// 	"key": "ctrl+d",
+	// 	"command": "workbench.action.toggleMultiCursorModifier"
+	// },
+	// {
+	// 	"key": "ctrl+d",
+	// 	"command": "-editor.action.addSelectionToNextFindMatch",
+	// 	"when": "editorFocus"
+	// },
+	// {
+	// 	"key": "ctrl+d",
+	// 	"command": "-extension.vim_ctrl+d",
+	// 	"when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+	// },
+	// {
+	// 	"key": "ctrl+d",
+	// 	"command": "-list.focusPageDown",
+	// 	"when": "listFocus && !inputFocus"
+	// },
+	// {
+	// 	"key": "ctrl+k",
+	// 	"command": "editor.action.addCommentLine",
+	// 	"when": "editorTextFocus && !editorReadonly"
+	// },
+	// {
+	// 	"key": "ctrl+k ctrl+c",
+	// 	"command": "-editor.action.addCommentLine",
+	// 	"when": "editorTextFocus && !editorReadonly"
+	// },
+	// {
+	// 	"key": "ctrl+k",
+	// 	"command": "-extension.vim_ctrl+k",
+	// 	"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+	// }
+]
