@@ -14,18 +14,19 @@
         vimAlias = true;
         vimdiffAlias = true;
 
-        # This only install plugin manger other plugin's install through '../vim/plugin.vim' file.
+        # This only install plugin manger other plugin's install through
+        # '../vim/plugin.vim' file.
         plugins = with pkgs.vimPlugins; [
           vim-plug
         ];
 
         # Default file '~/.config/nvim/init.vim' source this file
         extraConfig = ''
-          source ~/.config/nixed/nvim.vim
+          source ~/.config/nixed/vim/init.vim
         '';
         configure = {
           customRC = ''
-            source ~/.config/nixed/nvim.vim
+            source ~/.config/nixed/vim/init.vim
           '';
           packages.myVimPackage = with pkgs.vimPlugins; {
             start = [ vim-plug ];
@@ -37,9 +38,9 @@
       kitty = {
         enable = true;
 
-        # Default file '~/.config/kitty/kitty.conf' source this file
+        # Default file '~/.config/kitty/kitty.conf' source to given below file
         extraConfig = ''
-          include ~/.config/nixed/kitty/includes.conf
+          include ~/.config/nixed/kitty/kitty.conf
         '';
       };
 
@@ -69,11 +70,11 @@
     home = {
       file = {
         ".config/fish/config.fish".text = ''
-          source ~/.config/nixed/fish.fish
+          source ~/.config/nixed/shell/profile.fish
         '';
 
         # Create hard link's between files
-        ".config/git/config".source = ./git.init;
+        ".config/git/config".source = ../git.init;
       };
 
       packages = with pkgs; [
@@ -91,13 +92,12 @@
         zoxide                      # A smarter cd command
         unzip                       # unzip zip files
         git                         # Version control system
-        python39Packages.dbus-next  # DBus library for Qtile
         patool                      # Portable archive file manager
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime
-        deno        # JavaScript back-end runtime
-        commitizen  # Make proper commit
+        deno        # Morden JavaScript back-end runtime
+        # commitizen  # Make proper commit
       ];
     };
 

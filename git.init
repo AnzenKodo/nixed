@@ -10,7 +10,7 @@
   # Enable colors in color-supporting terminals
   ui = auto
 [github]
-	user = pksunkara
+	user = AnzenKodo
 	token = token
 [pull]
   rebase = merges

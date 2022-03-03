@@ -44,11 +44,11 @@ set wildignorecase " Ignore capital letter in Wildmode
 set wildoptions-=pum " Horizontal wildmenu
 set showcmd " Similar command
 
-# Spell Check
-" set spell " Spell checking
+" Spell checking
 " Don't show spell error on words which are inside
 " the file.
 set spellfile=~/.config/nixed/vim/en.utf-8.add
+" set spell
 hi SpellBad cterm=underline
 hi SpellLocal cterm=underline
 hi SpellRare cterm=underline
@@ -66,10 +66,10 @@ set clipboard=unnamedplus " Vim to use system clipboard
 " hi CursorLine guibg=#2f2f2f ctermfg=none
 
 " Editor
-set syntax=on
+set syntax=on " Enable syntax highlight
 set number " Show numbers
 set showmatch	"	Matching brace
-" set colorcolumn=50 " column line to indicate limit
+set colorcolumn=80 " column line to indicate limit
 " set termguicolors "Enable true color
 
 " Side Bar
@@ -80,3 +80,7 @@ set ruler " Show cursor
 " set cmdheight=2 " Displaying messages
 set laststatus=2 " Status Bar
 set noshowmode " Don't current mode
+
+" Source files
+source ~/.config/nixed/vim/plugins.vim
+source ~/.config/nixed/vim/shortcuts.vim

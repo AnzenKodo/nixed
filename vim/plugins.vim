@@ -12,12 +12,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'dominikduda/vim_current_word' " Highlight current word under cursor
 	Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
 
-	" Only Works on Neovim only
-	Plug 'ZhiyuanLck/smart-pairs'
-	" Neovim to work on browser textfields
-	" More info https://github.com/glacambre/firenvim
-	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
 	" Plugins for specific Programming Languages only
 	Plug 'lepture/vim-jinja'	" Nunjucks
 	Plug 'mattn/emmet-vim'		" HTML
@@ -27,8 +21,6 @@ call plug#end()
 
 " Loads Neovim plugins
 lua << EOF
-	-- smart-pairs
-	require('pairs'):setup()
 EOF
 
 " Uses pywal theme
@@ -51,7 +43,7 @@ let g:ale_deno_unstable = 1
 " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 " \   'typescript': ['deno'],
 " \}
-# A.L.E shortcuts
+" A.L.E shortcuts
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
