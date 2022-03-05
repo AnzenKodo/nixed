@@ -75,6 +75,7 @@
 
         # Create hard link's between files
         ".config/git/config".source = ../git.init;
+        ".config/npm/npmrc".source = ../npmrc
       };
 
       packages = with pkgs; [
