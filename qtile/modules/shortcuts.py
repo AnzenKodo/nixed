@@ -10,8 +10,7 @@ keys = [
     # Qtile
     Key(
         [mod, 'control'], 'r',
-        lazy.reload(),
-        # lazy.reload_config(),
+        lazy.reload_config(),
         # lazy.spawn('qtile-cmd -o cmd -f restart &> /dev/null'),
         desc='Reload config Qtile'
     ),
