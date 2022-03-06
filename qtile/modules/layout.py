@@ -9,6 +9,6 @@ layout_theme = {
 }
 
 layouts = [
-    # layout.Columns(**layout_theme),
+    layout.Columns(**layout_theme),
     layout.Max()
 ]
