@@ -3,8 +3,9 @@ import os
 
 # Loads generated colors from pywal
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
-# Default colors from Punk Colors #310273 #01a252
-colors = ['#170327', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe']
+# Default colors from Punk Colors
+colors = ['#170327', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#fefbfe', '#fefbfe']
+# colors = ['#170327', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe']
 # colors = []
 file_exists = os.path.exists(cache)
 
