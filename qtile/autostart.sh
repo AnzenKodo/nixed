@@ -15,4 +15,4 @@ picom &
 clipmenud &
 
 # Disable keyboard
-xinput disable "AT Translated Set 2 keyboard"
+xinput disable "AT Translated Set 2 keyboard" &

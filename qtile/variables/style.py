@@ -1,7 +1,6 @@
 from libqtile.lazy import lazy
 import os
 from time import strftime
-from typing import List
 
 # Loads generated colors from pywal
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
