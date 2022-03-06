@@ -3,7 +3,7 @@
 
 # Advance option for UNIX tools
 alias cp="cp -ivr"
-alias mv="mv -iv"
+alias mv="mv -ivp"
 alias bash="bash -o vi"
 alias cal="cal -y"
 alias grep="grep -i"

@@ -102,7 +102,17 @@ keys = [
         lazy.spawn(Commands.brightnessDown),
         desc='Decrease brightness'
     ),
-
+    # Screenshot
+    Key(
+        [mod], 's',
+        lazy.spawn(Commands.screenshort),
+        desc="Screenshot of specific area"
+    ),
+    Key(
+        [mod, 'shift'], 's',
+        lazy.spawn(Commands.screenshortFull),
+        desc="Screenshot of full screen"
+    ),
     # Menu
     Key(
         [mod], 'Return',
