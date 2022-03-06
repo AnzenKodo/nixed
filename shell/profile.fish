@@ -2,10 +2,11 @@
 
 # Sourcing files
 set shell_location ~/.config/nixed/shell
+source $shell_location/export.fish
 source $shell_location/alias
 source $shell_location/prompt.fish
 # Sourcing bash files
-bash -c "source "$shell_location"/export"
+# bash -c "source "$shell_location"/export"
 
 # Disable welcome message
 set fish_greeting
