@@ -108,7 +108,7 @@ screens = [
                 ),
                 # Displays clock
                 widget.Clock(
-                    format='| 📅 %Y-%b-%d %a | 🕒 %I:%M%p '
+                    format='| 📅 %Y-%b-%d %a | 🕒 %H:%M%p '
                 ),
                 # Shows number of pending updates
                 # widget.CheckUpdates(

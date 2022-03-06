@@ -10,7 +10,7 @@ file_exists = os.path.exists(cache)
 
 # Checks if file pywal colors file exists
 def load_colors(cache):
-    if (file_exists):
+    if file_exists:
       with open(cache, 'r') as file:
           for i in range(8):
               colors.append(file.readline().strip())
