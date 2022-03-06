@@ -14,7 +14,8 @@ widget_defaults = dict(
     padding=0,
 )
 
-wallpaper_location = f'~/.cache/background.jpg'
+# wallpaper_location = '~/.cache/background.jpg'
+
 screens = [
     Screen(
         # wallpaper=wallpaper_location,
