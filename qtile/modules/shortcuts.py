@@ -8,11 +8,11 @@ from variables.commands import Commands, mod
 # Qtile keyboard shortcuts
 keys = [
     # Qtile
-    #Key(
-    #    [mod, 'control'], 'r',
-    #    lazy.reload_config(),
-    #    desc='Reload config Qtile'
-    #),
+    Key(
+        [mod, 'control'], 'r',
+        lazy.reload_config(),
+        desc='Reload config Qtile'
+    ),
     #Key(
     #    [mod, 'control'], 'q',
     #    lazy.shutdown(),
