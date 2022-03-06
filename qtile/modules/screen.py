@@ -14,11 +14,11 @@ widget_defaults = dict(
     padding=0,
 )
 
-# wallpaper_location = '~/.cache/background.jpg'
+wallpaper_location = '~/.cache/background.jpg'
 
 screens = [
     Screen(
-        # wallpaper=wallpaper_location,
+        wallpaper=wallpaper_location,
         # How this image is painted to the screen is specified by the
         # `wallpaper_mode` parameter.
         # 'fill': Image will be centred on the screen and resized to fill it.
