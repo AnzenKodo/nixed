@@ -22,7 +22,7 @@ def load_colors(cache):
       colors.extend(['#000000', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe', '#05f2c7'])
     else:
       # Default colors from Punk Colors
-      colors.extend(['#0583f2', '#fefbfe', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#170327', '#310273'])
+      colors.extend(['#0583f2', '#fefbfe', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe', '#05f2c7'])
 
 load_colors(cache)
 
