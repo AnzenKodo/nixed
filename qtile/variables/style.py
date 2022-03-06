@@ -10,16 +10,18 @@ colors = []
 # Checks if file pywal colors file exists
 def load_colors(cache):
     file_exists = os.path.exists(cache)
-    # if file_exists:
-    #   with open(cache, 'r') as file:
-    #       for i in range(8):
-    #           colors.append(file.readline().strip())
-    #   colors.append('#fefbfe')
-    #   lazy.reload()
+    if file_exists:
+      with open(cache, 'r') as file:
+          for i in range(8):
+              colors.append(file.readline().strip())
+      colors.append('#fefbfe')
+      lazy.reload()
+
     nowhours = int(strftime("%-H"))
     if (nowhours >= 18):
       # Default colors from Punk Black Colors
       colors.extend(['#000000', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe', '#05f2c7'])
+
     else:
       # Default colors from Punk Colors
       colors.extend(['#0583f2', '#fefbfe', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe', '#fefbfe'])
