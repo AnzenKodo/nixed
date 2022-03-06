@@ -4,7 +4,7 @@ import os
 # Loads generated colors from pywal
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
 # Default colors from Punk Colors
-colors = ['#170327', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#fefbfe', '#fefbfe']
+colors = ['#170327', '#310273', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe']
 # colors = []
 file_exists = os.path.exists(cache)
 
@@ -26,5 +26,5 @@ class Style:
     important = [colors[2], colors[3]]
     heighlight = [colors[4], colors[5]]
     other = colors[6]
-    fontColor = [colors[8], colors[7]]
+    fontColor = colors[8]
     font = 'JetBrains Mono'
