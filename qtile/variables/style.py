@@ -26,5 +26,5 @@ class Style:
     important = [colors[2], colors[3]]
     heighlight = [colors[4], colors[5]]
     other = colors[6]
-    fontColor = colors[8]
+    fontColor = colors[1]
     font = 'JetBrains Mono'
