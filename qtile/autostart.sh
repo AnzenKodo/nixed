@@ -8,11 +8,11 @@ $HOME/.local/bin/wallpaper &
 # Backup File
 $HOME/.local/bin/backup &
 
-# Disable keyboard
-xinput disable "AT Translated Set 2 keyboard"
-
 # Transparent window
 picom &
 
 # Clipboard
-clipmenud
+clipmenud &
+
+# Disable keyboard
+xinput disable "AT Translated Set 2 keyboard"
