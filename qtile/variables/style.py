@@ -2,9 +2,6 @@ from libqtile.lazy import lazy
 import os
 from time import strftime
 
-from libqtile import hook
-import subprocess
-
 # Loads generated colors from pywal
 cache = f'/home/{os.getlogin()}/.cache/wal/colors'
 colors = []
@@ -29,14 +26,7 @@ def load_colors(cache):
       colors.extend(['#0583f2', '#fefbfe', '#f2b705', '#0583f2', '#05f2c7', '#01a252', '#36a598', '#fefbfe', '#fefbfe'])
 
 
-# Run commands or spawn some applications when Qtile starts.
-@ hook.subscribe.startup_once
-def autostart():
-    # create an executable file ~/.config/nixed/qtile/autostart.sh that will
-    # start a programs when Qtile first runs.
-    home = os.path.expanduser('~/.config/nixed/qtile/autostart.sh')
-    load_colors(cache)
-    subprocess.call([home])
+load_colors(cache)
 
 # pywal colors simplify
 class Style:
