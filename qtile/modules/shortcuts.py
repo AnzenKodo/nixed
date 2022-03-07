@@ -10,8 +10,7 @@ keys = [
     # Qtile
     Key(
         [mod, 'control'], 'r',
-        # lazy.reload_config(),
-        lazy.restart(),
+        lazy.reload_config(),
         desc='Reload config Qtile'
     ),
     Key(
