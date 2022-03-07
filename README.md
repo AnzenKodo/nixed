@@ -1,20 +1,43 @@
 <div align="center">
 
 ```
-.__   __.  __  ___   ___  _______  _______
-|  \ |  | |  | \  \ /  / |   ____||       \
-|   \|  | |  |  \  V  /  |  |__   |  .--.  |
-|  . `  | |  |   > X <   |   __|  |  |  |  |
-|  |\   | |  |  /  .  \  |  |____ |  '--'  |
-|__| \__| |__| /__/ \__\ |_______||_______/
-The dotfile OS
+  .__   __.  __  ___   ___  _______  _______
+  |  \ |  | |  | \  \ /  / |   ____||       \
+  |   \|  | |  |  \  V  /  |  |__   |  .--.  |
+  |  . `  | |  |   > x <   |   __|  |  |  |  |
+  |  |\   | |  |  /  .  \  |  |____ |  '--'  |
+  |__| \__| |__| /__/ \__\ |_______||_______/
+The dotfile Distro
 ```
 </div>
 
 <!--TODO:Add screenshrot-->
-<!--TODO:Add NixOS bio-->
-Nixed is dotfile OS which is built upon [NixOS](https://nixos.org). Nixed is
-configured with a high level of portable for minimalism and optimization.
+
+## About
+
+Nixed is dotfile OS which is built upon [NixOS](https://nixos.org).
+
+### Why Nixed exists?
+
+I like dotfiles because you don't have to configure programs that comes with
+dotfiles. In Nixed I tried to do just that in Nixed you just need to install it
+and if you want you can edit config file and you are ready to go. Nixed is based
+on NixOS which say on it website "Reproducible builds and deployments" which is
+true. You can say Nixed just a skin of NixOS which is customized for down given
+list in mind.
+
+### Features
+- **Easy** - Easer to install , Enter only two lines of code to install.
+- **Minimal** - No bloat only important packages are install.
+- **Safe** - Saves backup every time you update or install packages vie Nix
+  config file.
+- **Up-to-date** - Nixed uses unstable branch of NixOS so you will get latest
+  packages.
+- **Stable** - Even though I using Unstable branch It's still feel like stable.
+- **Keyboard oriented** - Nixed is configured to as much as less mouse.
+- **Programmable** - You can make any changes as you need, Nixed uses Nix,
+  Python, Vim, Fish as it's language.
+- For more you can read [How Nix works](https://nixos.org/guides/how-nix-works.html)
 
 ## 📄 Documentation
 

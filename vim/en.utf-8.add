@@ -12,3 +12,5 @@ CursorLine
 cursorline
 guibg
 ctermfg
+config
+NixOS
