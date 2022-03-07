@@ -33,10 +33,10 @@ def load_colors(cache):
 @ hook.subscribe.startup_once
 def autostart():
     # create an executable file ~/.config/nixed/qtile/autostart.sh that will
-    # start a few programs when Qtile first runs.
+    # start a programs when Qtile first runs.
     home = os.path.expanduser('~/.config/nixed/qtile/autostart.sh')
-    subprocess.call([home])
     load_colors(cache)
+    subprocess.call([home])
 
 # pywal colors simplify
 class Style:
