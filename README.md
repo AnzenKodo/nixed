@@ -1,12 +1,12 @@
 <div align="center">
 
 ```
-  .__   __.  __  ___   ___  _______  _______
-  |  \ |  | |  | \  \ /  / |   ____||       \
-  |   \|  | |  |  \  V  /  |  |__   |  .--.  |
-  |  . `  | |  |   > x <   |   __|  |  |  |  |
-  |  |\   | |  |  /  .  \  |  |____ |  '--'  |
-  |__| \__| |__| /__/ \__\ |_______||_______/
+.__   __.  __  ___   ___  _______  _______  
+|  \ |  | |  | \  \ /  / |   ____||       \ 
+|   \|  | |  |  \  V  /  |  |__   |  .--.  |
+|  . `  | |  |   > x <   |   __|  |  |  |  |
+|  |\   | |  |  /  .  \  |  |____ |  '--'  |
+|__| \__| |__| /__/ \__\ |_______||_______/ 
 The dotfile Distro
 ```
 </div>
@@ -47,9 +47,11 @@ list in mind.
 - [Kitty](kitty)
 
 ## 🏁 Getting Started
-
+NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
+- To Install NixOS go to [next step](#installing-nixos). 
+- If you already installed NixOS then go to [second step](#installing-nixed).
+  
 ### Installing NixOS
-
 - Download the ISO from the [NixOS website](https://nixos.org/download.html#download-nixos).
   (Recommended to download **Graphical ISO image** for Easiness)
 - Make a bootable USB drive, or CD.
@@ -57,22 +59,72 @@ list in mind.
     'How to make bootable USB drive in [YOUR PLATFORM NAME]'.
 - Insert the USB and reboot your computer.
 - Go to NixOS.
-- Run the given below line in the terminal to install NixOS. (Note: This script
-  will wipe out all your data, make sure you have backup of your data).
+- Check which boot system you are on to do that check `/sys/firmware/efi` directory
+  exist. To check directory enter following command.
+  ```bash
+  ls /sys/firmware/efi
+  ```
+  If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory` then
+  your system is Legacy 
+  
+  If it shows the directory then your system is UEFI.
+- Run the given below lines one by one in the terminal to install NixOS or you 
+  refer to NixOS Manual to know more infomation about given commands. (Note: 
+  This will wipe out all your data, make sure you have backup of your data).
+  
+<details>
+<summary>For UEFI Boot</summary>
+
 ```bash
-bash < <(curl -s https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixos-install.sh)
+parted /dev/sda -- mklabel gpt
+parted /dev/sda -- mkpart primary 512MiB -8GiB
+parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
+parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
+parted /dev/sda -- set 3 esp on
+mkfs.ext4 -L nixos /dev/sda1
+mkswap -L swap /dev/sda2
+mkfs.fat -F 32 -n boot /dev/sda3
+mount /dev/disk/by-label/nixos /mnt
+mkdir -p /mnt/boot
+mount /dev/disk/by-label/boot /mnt/boot
+swapon /dev/sda2
+nixos-generate-config --root /mnt
+nixos-install
 ```
-- After completing the NixOS installing, reboot your system and next install
-  Nixed.
+</details>
+
+<details>
+<summary>For Legacy Boot (MBR)</summary>
+
+```bash
+parted /dev/sda -- mklabel msdos
+parted /dev/sda -- mkpart primary 1MiB -8GiB
+parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
+mkfs.ext4 -L nixos /dev/sda1
+mkswap -L swap /dev/sda2
+mount /dev/disk/by-label/nixos /mnt
+swapon /dev/sda2
+nixos-generate-config --root /mnt
+nixos-install
+```
+</details>
+
+- After completing the NixOS installing it will ask you to make
+  password for your root user. (Note: After installing Nixed your
+  root user will be disable
+  [for security reasons](https://superuser.com/a/666947))
+- Now reboot your system.
+- After reboot longin as root. To do that enter
+  Username: root
+  Password: [That you have enterd during installion]
 
 ### Installing Nixed
 
-- After installing or Powering Up your computer, let's install Nixed.
 - Run the given below line in the terminal to install Nixed.
 ```bash
 bash < <(curl -s https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixed-install.sh)
 ```
-- After installing Nixed you're done, congratulations. But the Next step is to
+- After installing Nixed you're done, congratulations. But the next step is
   learn to use Nixed.
 
 ## 💻 System Information
