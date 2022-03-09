@@ -60,7 +60,7 @@ list in mind.
 - Run the given below line in the terminal to install NixOS. (Note: This script
   will wipe out all your data, make sure you have backup of your data).
 ```bash
-curl https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixos-install.sh | bash
+bash < <(curl -s https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixos-install.sh)
 ```
 - After completing the NixOS installing, reboot your system and next install
   Nixed.
@@ -70,7 +70,7 @@ curl https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b7
 - After installing or Powering Up your computer, let's install Nixed.
 - Run the given below line in the terminal to install Nixed.
 ```bash
-curl https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixed-install.sh | bash
+bash < <(curl -s https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixed-install.sh)
 ```
 - After installing Nixed you're done, congratulations. But the Next step is to
   learn to use Nixed.
