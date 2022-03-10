@@ -48,7 +48,7 @@ list in mind.
 
 ## 🏁 Getting Started
 NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
-- To Install NixOS with Nixed go to [next step](#nixed-newer-installion). 
+- To Install NixOS go to [next step](#nixed-newer-installion). 
 - If you already installed NixOS then go to [second step](#nixed-installion).
   
 ### Nixed newer installion
@@ -59,6 +59,8 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
     'How to make bootable USB drive in [YOUR PLATFORM NAME]'.
 - Insert the USB and reboot your computer.
 - Go to NixOS.
+
+#### Postinstallion
 - Check which boot system you are on to do that check `/sys/firmware/efi` directory
   exist. To check directory enter following command.
   ```bash
@@ -89,6 +91,8 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
+nixos-generate-config --root /mnt
+nixos-install
 ```
 </details>
 
@@ -105,57 +109,82 @@ mkfs.ext4 -L nixos /dev/sda1
 mkswap -L swap /dev/sda2
 mount /dev/disk/by-label/nixos /mnt
 swapon /dev/sda2
+nixos-generate-config --root /mnt
+nixos-install
 ```
 </details>
-  
-- Now to complete installion of NixOS and to install Nixed enter following commands.
-```bash
-# First install Git to download Nixed files.
-nix-env -iA nixos.git
 
-# Fork the repo from Github or use the Orignal
-git clone https://github.com/[USERNAME]/nixed /mnt/home/ramen/.config/nixed
-
-# Generate configuration.nix & hardware-configuration.nix files
-sudo nixos-generate-config --root /mnt  
-
-# Now edit the configration.nix
-https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /mnt/etc/nixos/configuration.nix
-
-# Now install NixOS
-nixos-install 
-```
-- After completing the NixOS installing it will ask you to make
-  password for your root user. (Note: After installing Nixed your
-  root user will be disable
-  [for security reasons](https://superuser.com/a/666947))
-- Now reboot your system.
+#### Afterinstallion
 - After reboot longin as root. To do that enter
+  ```bash
   Username: root
   Password: [That you have enterd during installion]
+  ```
+- Create user
+  ```bash
+  # `ramen` is Nixed default username.
+  useradd ramen # Add user
+  passwd ramen # Set password
+  exit # Now exit
+  ```
+- Now login as ramen (the user that you have created).
+  ```bash
+  Username: ramen
+  Password: [That you have enterd during `passwd ramen` command]
+  ```
+- 
+  ```bash
+  # First install Git to download Nixed files.
+  nix-env -iA nixos.git
+
+  # Fork the repo from Github or use the Orignal
+  git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
+
+  # Now edit the configration.nix
+  sudo curl https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
+  
+  # Upgrade to Nixed
+  nixos-rebuild switch --upgrade
+  ```
+- Reboot the system and go latest generation to enter in your brand new distro
 - After installing Nixed you're done, congratulations. But the next step is
   learn to use Nixed.
 
 ### Nixed installion
 
 - Run the given below line in the terminal to install Nixed.
-```bash
-# First install Git to download Nixed files.
-nix-env -iA nixos.git
+  ```bash
+  # First install Git to download Nixed files.
+  nix-env -iA nixos.git
 
-# Fork the repo from Github or use the Orignal
-git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
+  # Fork the repo from Github or use the Orignal
+  git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
 
-# Now edit the configration.nix
-sudo https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
+  # Now edit the configration.nix
+  sudo https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
 
-# Upgrate to new according to configuration.
-sudo nixos-rebuild --upgrade
-
-```
+  # Upgrate to new according to configuration.
+  sudo nixos-rebuild switch --upgrade
+  ```
 - Reboot the system and go latest generation to enter in your brand new distro
 - After installing Nixed you're done, congratulations. But the next step is
   learn to use Nixed.
+
+### Advance
+Some special twicks for Nixed.
+```bash
+# Shell scripts for Nixed
+# Note: Scripts will install on `~/.local/bin/` so it expeted you to use `~/.local/bin/` for scripts.
+mkdir -vp ~/.local/bin
+git clone https://gist.github.com/AnzenKodo/71e813bc8444c53f43236a57fc80a23c ~/.local/bin
+
+# SSH Setup
+ssh-keygen -t ed25519 -C "Gangnam"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat $HOME/.ssh/id_ed25519.pub
+xdg-open https://github.com/settings/keys
+```
 
 ## 💻 System Information
 
