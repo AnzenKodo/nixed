@@ -132,7 +132,7 @@ nixos-install
   Username: ramen
   Password: [That you have enterd during `passwd ramen` command]
   ```
-- 
+- Nixed Installion
   ```bash
   # First install Git to download Nixed files.
   nix-env -iA nixos.git
@@ -144,7 +144,7 @@ nixos-install
   sudo curl https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
   
   # Upgrade to Nixed
-  nixos-rebuild switch --upgrade
+  sudo nixos-rebuild switch --upgrade
   ```
 - Reboot the system and go latest generation to enter in your brand new distro
 - After installing Nixed you're done, congratulations. But the next step is
