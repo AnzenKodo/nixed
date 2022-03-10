@@ -148,8 +148,8 @@ nixos-install
   # Check available wifi
   nmcli dev wifi list
   # To connect to wifi
-  nmcli --ask dev wifi connect network-ssid
-  # Example `nmcli --ask dev wifi connect "D-Link"`
+  sudo nmcli --ask dev wifi connect network-ssid
+  # Example `sudo nmcli --ask dev wifi connect "D-Link"`
   
   exit # Now exit
   ```
@@ -167,6 +167,7 @@ nixos-install
   git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
 
   # Link Nixed `configuration.nix` file to NixOS `configuration.nix` file.
+  sudo rm /etc/nixos/configuration.nix
   sudo ln ~/.config/nixed/nixos/configuration.nix /etc/nixos/configuration.nix
   
   # Upgrade to Nixed
