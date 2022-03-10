@@ -48,10 +48,10 @@ list in mind.
 
 ## 🏁 Getting Started
 NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
-- To Install NixOS go to [next step](#installing-nixos). 
-- If you already installed NixOS then go to [second step](#installing-nixed).
+- To Install NixOS with Nixed go to [next step](#nixed-newer-installion). 
+- If you already installed NixOS then go to [second step](#nixed-installion).
   
-### Installing NixOS
+### Nixed newer installion
 - Download the ISO from the [NixOS website](https://nixos.org/download.html#download-nixos).
   (Recommended to download **Graphical ISO image** for Easiness)
 - Make a bootable USB drive, or CD.
@@ -68,9 +68,10 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   your system is Legacy 
   
   If it shows the directory then your system is UEFI.
-- Run the given below lines one by one in the terminal to install NixOS or you 
-  refer to NixOS Manual to know more infomation about given commands. (Note: 
-  This will wipe out all your data, make sure you have backup of your data).
+- Run the given below lines accoding to your boot system one by one in the 
+  terminal to install NixOS or you refer to NixOS Manual to know more 
+  infomation about given commands. (Note: This will wipe out all your data, 
+  make sure you have backup of your data).
   
 <details>
 <summary>For UEFI Boot</summary>
@@ -88,8 +89,6 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
-nixos-generate-config --root /mnt
-nixos-install
 ```
 </details>
 
@@ -97,6 +96,8 @@ nixos-install
 <summary>For Legacy Boot (MBR)</summary>
 
 ```bash
+# Run as root user
+sudo su
 parted /dev/sda -- mklabel msdos
 parted /dev/sda -- mkpart primary 1MiB -8GiB
 parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
@@ -104,11 +105,26 @@ mkfs.ext4 -L nixos /dev/sda1
 mkswap -L swap /dev/sda2
 mount /dev/disk/by-label/nixos /mnt
 swapon /dev/sda2
-nixos-generate-config --root /mnt
-nixos-install
 ```
 </details>
+  
+- Now to complete installion of NixOS and to install Nixed enter following commands.
+```bash
+# First install Git to download Nixed files.
+nix-env -iA nixos.git
 
+# Fork the repo from Github or use the Orignal
+git clone https://github.com/[USERNAME]/nixed /mnt/home/ramen/.config/nixed
+
+# Generate configuration.nix & hardware-configuration.nix files
+sudo nixos-generate-config --root /mnt  
+
+# Now edit the configration.nix
+https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /mnt/etc/nixos/configuration.nix
+
+# Now install NixOS
+nixos-install 
+```
 - After completing the NixOS installing it will ask you to make
   password for your root user. (Note: After installing Nixed your
   root user will be disable
@@ -117,13 +133,27 @@ nixos-install
 - After reboot longin as root. To do that enter
   Username: root
   Password: [That you have enterd during installion]
+- After installing Nixed you're done, congratulations. But the next step is
+  learn to use Nixed.
 
-### Installing Nixed
+### Nixed installion
 
 - Run the given below line in the terminal to install Nixed.
 ```bash
-bash < <(curl -s https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/nixed-install.sh)
+# First install Git to download Nixed files.
+nix-env -iA nixos.git
+
+# Fork the repo from Github or use the Orignal
+git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
+
+# Now edit the configration.nix
+sudo https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
+
+# Upgrate to new according to configuration.
+sudo nixos-rebuild --upgrade
+
 ```
+- Reboot the system and go latest generation to enter in your brand new distro
 - After installing Nixed you're done, congratulations. But the next step is
   learn to use Nixed.
 
