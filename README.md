@@ -203,7 +203,6 @@ Some special twicks for Nixed.
 ```bash
 # Shell scripts for Nixed
 # Note: Scripts will install on `~/.local/bin/` so it expeted you to use `~/.local/bin/` for scripts.
-mkdir -vp ~/.local/bin
 git clone https://gist.github.com/AnzenKodo/71e813bc8444c53f43236a57fc80a23c ~/.local/bin
 
 # SSH Setup
