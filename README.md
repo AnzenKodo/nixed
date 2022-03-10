@@ -75,46 +75,60 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   infomation about given commands. (Note: This will wipe out all your data, 
   make sure you have backup of your data).
   
-<details>
-<summary>For UEFI Boot</summary>
+  <details>
+  <summary>For UEFI Boot</summary>
 
+    ```bash
+    # Run as root user
+    sudo su
+    parted /dev/sda -- mklabel gpt
+    parted /dev/sda -- mkpart primary 512MiB -8GiB
+    parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
+    parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
+    parted /dev/sda -- set 3 esp on
+    mkfs.ext4 -L nixos /dev/sda1
+    mkswap -L swap /dev/sda2
+    mkfs.fat -F 32 -n boot /dev/sda3
+    mount /dev/disk/by-label/nixos /mnt
+    mkdir -p /mnt/boot
+    mount /dev/disk/by-label/boot /mnt/boot
+    swapon /dev/sda2
+    nixos-generate-config --root /mnt
+    ```
+  </details>
+
+  <details>
+  <summary>For Legacy Boot (MBR)</summary>
+
+    ```bash
+    # Run as root user
+    sudo su
+    parted /dev/sda -- mklabel msdos
+    parted /dev/sda -- mkpart primary 1MiB -8GiB
+    parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
+    mkfs.ext4 -L nixos /dev/sda1
+    mkswap -L swap /dev/sda2
+    mount /dev/disk/by-label/nixos /mnt
+    swapon /dev/sda2
+    nixos-generate-config --root /mnt
+    ```
+  </details>
+
+- Edit `/etc/nixos/configuration.nix` file add given lines in thrid last line
+  in file.
+```nix
+# Enable user as username `ramen` which is default in Nixed
+users.users.ramen = {
+  isNormalUser = true;
+  extraGroups = [ "wheel" "video" "audio" ]; # Root user
+};
+# Add following line in to enable Wifi support with network manager.
+networking.networkmanager.enable = true;
+```
+- Install NixOS now.
 ```bash
-# Run as root user
-sudo su
-parted /dev/sda -- mklabel gpt
-parted /dev/sda -- mkpart primary 512MiB -8GiB
-parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
-parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-parted /dev/sda -- set 3 esp on
-mkfs.ext4 -L nixos /dev/sda1
-mkswap -L swap /dev/sda2
-mkfs.fat -F 32 -n boot /dev/sda3
-mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/boot
-mount /dev/disk/by-label/boot /mnt/boot
-swapon /dev/sda2
-nixos-generate-config --root /mnt
 nixos-install
 ```
-</details>
-
-<details>
-<summary>For Legacy Boot (MBR)</summary>
-
-```bash
-# Run as root user
-sudo su
-parted /dev/sda -- mklabel msdos
-parted /dev/sda -- mkpart primary 1MiB -8GiB
-parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
-mkfs.ext4 -L nixos /dev/sda1
-mkswap -L swap /dev/sda2
-mount /dev/disk/by-label/nixos /mnt
-swapon /dev/sda2
-nixos-generate-config --root /mnt
-nixos-install
-```
-</details>
 
 #### Afterinstallion
 - After reboot longin as root. To do that enter
@@ -122,11 +136,17 @@ nixos-install
   Username: root
   Password: [That you have enterd during installion]
   ```
-- Create user
+- Set password and to connect to wifi network.
   ```bash
   # `ramen` is Nixed default username.
-  useradd ramen # Add user
   passwd ramen # Set password
+  
+  # Check available wifi
+  nmcli dev wifi list
+  # To connect to wifi
+  nmcli --ask dev wifi connect network-ssid
+  # Example `nmcli --ask dev wifi connect "D-Link"`
+  
   exit # Now exit
   ```
 - Now login as ramen (the user that you have created).
