@@ -114,7 +114,7 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
     ```
   </details>
 
-- Edit `/etc/nixos/configuration.nix` file add given lines in thrid last line
+- Edit `/mnt/etc/nixos/configuration.nix` file add given lines in thrid last line
   in file.
 ```nix
 # Enable user as username `ramen` which is default in Nixed
