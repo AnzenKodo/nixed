@@ -187,8 +187,9 @@ nixos-install
   # Fork the repo from Github or use the Orignal
   git clone https://github.com/[USERNAME]/nixed ~/.config/nixed
 
-  # Now edit the configration.nix
-  sudo https://gist.githubusercontent.com/AnzenKodo/61f3addb535d0eca4d935f6d4062b79d/raw/configuration.nix > /etc/nixos/configuration.nix
+  # Link Nixed `configuration.nix` file to NixOS `configuration.nix` file.
+  sudo rm /etc/nixos/configuration.nix
+  sudo ln ~/.config/nixed/nixos/configuration.nix /etc/nixos/configuration.nix
 
   # Upgrate to new according to configuration.
   sudo nixos-rebuild switch --upgrade
