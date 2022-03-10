@@ -79,6 +79,8 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
 <summary>For UEFI Boot</summary>
 
 ```bash
+# Run as root user
+sudo su
 parted /dev/sda -- mklabel gpt
 parted /dev/sda -- mkpart primary 512MiB -8GiB
 parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
