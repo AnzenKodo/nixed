@@ -50,6 +50,7 @@ list in mind.
 NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
 - To Install NixOS go to [next step](#nixed-newer-installion). 
 - If you already installed NixOS then go to [second step](#nixed-installion).
+- Just want to twick something with Nixed go to [thrid step](#advance)
   
 ### Nixed newer installion
 - Download the ISO from the [NixOS website](https://nixos.org/download.html#download-nixos).
@@ -66,10 +67,9 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   ```bash
   ls /sys/firmware/efi
   ```
-  If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory` then
+  - If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory` then
   your system is Legacy 
-  
-  If it shows the directory then your system is UEFI.
+  - If it shows the directory then your system is UEFI.
 - Run the given below lines accoding to your boot system one by one in the 
   terminal to install NixOS or you refer to NixOS Manual to know more 
   infomation about given commands. (Note: This will wipe out all your data, 
