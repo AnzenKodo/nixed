@@ -48,7 +48,11 @@ list in mind.
 
 ## 🏁 Getting Started
 NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
-- To Install NixOS go to [next step](#nixed-newer-installion). 
+- To Install NixOS go to [next step](#nixed-newer-installion).
+  - I have given the easy step without much technical details to make installion
+  easy as copy and paste but still NixOS very hard distro to install.
+  - If you get stuck somewhere or you want full technical details then you
+  can go to [NixOS Manual](https://nixos.org/manual/nixos) website.
 - If you already installed NixOS then go to [second step](#nixed-installion).
 - Just want to twick something with Nixed go to [thrid step](#advance)
   
