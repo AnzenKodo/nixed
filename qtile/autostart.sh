@@ -3,7 +3,7 @@
 # Start the programs when Qtile starts.
 
 # Random Wallpaper
-# $HOME/.local/bin/wallpaper &
+$HOME/.local/bin/wallpaper &
 
 # Backup File
 $HOME/.local/bin/backup &
