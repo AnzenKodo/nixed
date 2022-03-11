@@ -12,4 +12,4 @@ $HOME/.local/bin/backup &
 picom &
 
 # Clipboard
-clipmenud
+clipmenud &
