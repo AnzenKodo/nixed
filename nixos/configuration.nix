@@ -2,7 +2,7 @@
 # Find the options that you can use --> https://search.nixos.org/options
 # Find the packages that you can install --> https://search.nixos.org/packages
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -14,16 +14,6 @@
       "${ builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz }/nixos"
       /home/ramen/.config/nixed/nixos/home.nix
     ];
-
-  nix = {
-    # Make NixOS use unstable branch
-    package = pkgs.nixUnstable;
-
-    # Enable Nix Flakes
-    extraOptions = ''
-        experimental-features = nix-command flakes
-      '';
-  };
 
   # EFI boot loader
   boot.loader = {
@@ -132,6 +122,8 @@
     autoUpgrade = {
       enable = true;
       allowReboot = false; # Auto Reboot after update
+			# Switch to Unstable channel
+			channel = "https://nixos.org/channels/nixos-unstable"
     };
   };
 

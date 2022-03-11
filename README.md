@@ -1,12 +1,12 @@
 <div align="center">
 
 ```
-.__   __.  __  ___   ___  _______  _______  
-|  \ |  | |  | \  \ /  / |   ____||       \ 
+.__   __.  __  ___   ___  _______  _______
+|  \ |  | |  | \  \ /  / |   ____||       \
 |   \|  | |  |  \  V  /  |  |__   |  .--.  |
 |  . `  | |  |   > x <   |   __|  |  |  |  |
 |  |\   | |  |  /  .  \  |  |____ |  '--'  |
-|__| \__| |__| /__/ \__\ |_______||_______/ 
+|__| \__| |__| /__/ \__\ |_______||_______/
 The dotfile Distro
 ```
 </div>
@@ -47,7 +47,7 @@ list in mind.
 - [Kitty](kitty)
 
 ## 🏁 Getting Started
-NixOS is baseline of Nixed so to use Nixed you have to install NixOS. 
+NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
 - To Install NixOS go to [next step](#nixed-newer-installion).
   - I have given the easy step without much technical details to make installion
   easy as copy and paste but still NixOS very hard distro to install.
@@ -55,7 +55,7 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   can go to [NixOS Manual](https://nixos.org/manual/nixos) website.
 - If you already installed NixOS then go to [second step](#nixed-installion).
 - Just want to twick something with Nixed go to [thrid step](#advance)
-  
+
 ### Nixed newer installion
 - Download the ISO from the [NixOS website](https://nixos.org/download.html#download-nixos).
   (Recommended to download **Graphical ISO image** for Easiness)
@@ -72,13 +72,13 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   ls /sys/firmware/efi
   ```
   - If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory` then
-  your system is Legacy 
+  your system is Legacy
   - If it shows the directory then your system is UEFI.
-- Run the given below lines accoding to your boot system one by one in the 
-  terminal to install NixOS or you refer to NixOS Manual to know more 
-  infomation about given commands. (Note: This will wipe out all your data, 
+- Run the given below lines accoding to your boot system one by one in the
+  terminal to install NixOS or you refer to NixOS Manual to know more
+  infomation about given commands. (Note: This will wipe out all your data,
   make sure you have backup of your data).
-  
+
   <details>
   <summary>For UEFI Boot</summary>
 
@@ -144,13 +144,13 @@ nixos-install
   ```bash
   # `ramen` is Nixed default username.
   passwd ramen # Set password
-  
+
   # Check available wifi
   nmcli dev wifi list
   # To connect to wifi
   sudo nmcli --ask dev wifi connect network-ssid
   # Example `sudo nmcli --ask dev wifi connect "D-Link"`
-  
+
   exit # Now exit
   ```
 - Now login as ramen (the user that you have created).
@@ -169,7 +169,7 @@ nixos-install
   # Link Nixed `configuration.nix` file to NixOS `configuration.nix` file.
   sudo rm /etc/nixos/configuration.nix
   sudo ln ~/.config/nixed/nixos/configuration.nix /etc/nixos/configuration.nix
-  
+
   # Upgrade to Nixed
   sudo nixos-rebuild switch --upgrade
   ```
@@ -319,4 +319,4 @@ Here are some related projects & also where I got inspiration.
 - [NNBnh Đotfiles Wiki](https://github.com/NNBnh/dots/wiki) - The most
   ambitious OS rice guide
 - [elenapan Dotfiles Wiki](https://github.com/elenapan/dotfiles/wiki) -
-  Articles that answer people's most common questions here.
+- Articles that answer people's most common questions here.
