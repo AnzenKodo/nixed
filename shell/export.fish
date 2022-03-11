@@ -24,7 +24,7 @@ set -gx NODE_REPL_HISTORY			$XDG_DATA_HOME/node_repl_history
 
 # Add folder to your path
 # Note don't forgot to include `:` in end before entering next folder path
-set -gx PATH "$PATH:~/.local/bin:$XDG_CONFIG_HOME/npm/bin:$XDG_CONFIG_HOME/deno/bin"
+set -gx PATH "$PATH:$HOME/.local/bin:$XDG_CONFIG_HOME/npm/bin:$XDG_CONFIG_HOME/deno/bin"
 
 # fish_add_path ~/.local/bin
 # fish_add_path $XDG_CONFIG_HOME/npm/bin

@@ -16,14 +16,14 @@
 
         # This only install plugin manger other plugin's install through
         # '../vim/plugin.vim' file.
-        plugins = with pkgs.vimPlugins; [
-          vim-plug
-        ];
+        #plugins = with pkgs.vimPlugins; [
+        #  vim-plug
+        #];
 
         # Default file '~/.config/nvim/init.vim' source this file
-        extraConfig = ''
-          source ~/.config/nixed/vim/init.vim
-        '';
+        #extraConfig = ''
+        #  source ~/.config/nixed/vim/init.vim
+        #'';
         configure = {
           customRC = ''
             source ~/.config/nixed/vim/init.vim
