@@ -14,8 +14,8 @@ set -gx XCOMPOSECACHE $XDG_CACHE_HOME/X11/xcompose
 
 # Applications
 set -gx NIXED									$XDG_CONFIG_HOME/nixed
-# set -gx GTK_RC_FILES					$XDG_CONFIG_HOME/gtk-1.0/gtkrc
-# set -gx GTK2_RC_FILES					$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+set -gx GTK_RC_FILES					$XDG_CONFIG_HOME/gtk-1.0/gtkrc
+set -gx GTK2_RC_FILES					$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 set -gx DENO_INSTALL_ROOT			$XDG_CONFIG_HOME/deno
 set -gx GNUPGHOME							$XDG_CONFIG_HOME/gnupg

@@ -1,18 +1,13 @@
 #!/usr/bin/env fish
 
 # Sourcing files
-set shell_location ~/.config/nixed/shell
+set shell_location ~/.config/nixed/fish
 source $shell_location/export.fish
 source $shell_location/alias
 source $shell_location/prompt.fish
-# Sourcing bash files
-# bash -c "source "$shell_location"/export"
 
 # Disable welcome message
 set fish_greeting
-
-# Import colors form pywal
-# . "$HOME/.cache/wal/colors.fish"
 
 # Enable fish VI mode
 fish_vi_key_bindings

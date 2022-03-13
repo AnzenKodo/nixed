@@ -69,7 +69,7 @@
     home = {
       file = {
         ".config/fish/config.fish".text = ''
-          source ~/.config/nixed/shell/profile.fish
+          source ~/.config/nixed/fish/profile.fish
         '';
 
         # Create hard link's between files

@@ -1,21 +1,27 @@
 # Qtile
 
-## Why I choose Qtile over other [Window Mangers](https://wiki.archlinux.org/title/Comparison_of_tiling_window_managers)?
-
+## Why did I choose Qtile over other [Window Managers](https://wiki.archlinux.org/title/Comparison_of_tiling_window_managers)?
+The best thing about Qtile is it is written in and can be configured in
+Python. Python is not some obscure language I have to learn to use. Python is
+one of the most popular languages at the time of writing and is one of the
+easiest to learn as compared to other languages. There many features in Qtile
+that are bloat for me. But many needed feathers are pre-built, so I don't have
+to download any third-party applications.
 
 ## Features
-- **Auto-start** - auto-start application on start of Qtile by including in file
-	[`autostart.sh`](autostart.sh).
-- **Fully keyboard** - Save your muscle memory by only using keyboard.
+- **Auto-start** - Auto-start application on the start of Qtile by including it
+  in file [`autostart.sh`](autostart.sh) file.
+- **Fully keyboard** - Save your muscle memory by only using the keyboard.
 - **Easy to Learn** - Simple keybindings for easiness.
-- **Easy to configure** - Qtile is written on Python and configure with Python.
-- **Beautifully structured** - This config is separated into multiple file to easy
-	to read not made info single huge file mess. (Note: Qtile don't recommends
-	separating config file. Here I compromise on stability for manageability.)
-- **Minimal UI** - This config don't use any complex UI everything is dead
-	simple to use.
-- **Day & Night colorscheme** - Qtile changes to dark mode on night and bright
-	mode on day.
+- **Easy to set up** - Qtile is written and configured with Python.
+- **Beautifully structured** - This configuration is separated into many files,
+  so it is easy to read, and that's why it is not made into a single big file
+	mess. (Note: Qtile doesn't recommend separating config files. Here I
+	compromise on stability for manageability.)
+- **Minimal User Interface** - This configuration doesn't use any complex UI;
+  everything is dead simple to use.
+- **Day & Night color scheme** - Qtile changes to dark mode at night and bright
+	mode during the day.
 
 ## Shortcuts
 
