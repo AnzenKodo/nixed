@@ -14,3 +14,8 @@ guibg
 ctermfg
 config
 NixOS
+Qtile
+Ctrl
+colorscheme
+F11
+Xresources

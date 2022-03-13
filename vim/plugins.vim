@@ -1,5 +1,4 @@
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'dylanaraps/wal.vim'						" Import colorseam from pywal
 	Plug 'sheerun/vim-polyglot'					" Syntax highlighting
 	Plug 'tpope/vim-commentary'					" Comment
 	Plug 'tpope/vim-surround'						" Change pairs
@@ -22,9 +21,6 @@ call plug#end()
 " Loads Neovim plugins
 lua << EOF
 EOF
-
-" Uses pywal theme
-colorscheme wal
 
 " Rainbow
 let g:rainbow_active = 1 " Active Plug-in

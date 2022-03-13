@@ -1,5 +1,22 @@
 # Qtile
 
+## Why I choose Qtile over other [Window Mangers](https://wiki.archlinux.org/title/Comparison_of_tiling_window_managers)?
+
+
+## Features
+- **Auto-start** - auto-start application on start of Qtile by including in file
+	[`autostart.sh`](autostart.sh).
+- **Fully keyboard** - Save your muscle memory by only using keyboard.
+- **Easy to Learn** - Simple keybindings for easiness.
+- **Easy to configure** - Qtile is written on Python and configure with Python.
+- **Beautifully structured** - This config is separated into multiple file to easy
+	to read not made info single huge file mess. (Note: Qtile don't recommends
+	separating config file. Here I compromise on stability for manageability.)
+- **Minimal UI** - This config don't use any complex UI everything is dead
+	simple to use.
+- **Day & Night colorscheme** - Qtile changes to dark mode on night and bright
+	mode on day.
+
 ## Shortcuts
 
 ### Keyboard
@@ -11,7 +28,7 @@
 | Quite Qtile                                | Mod + Ctrl + q                          |
 | **Window**                                 |                                         |
 | Close window                               | Mod + q                                 |
-| Fullscreen window                          | Mod + Space                             |
+| Full-screen window                         | Mod + Space                             |
 | Floating window                            | Mod + f                                 |
 | Switch window layout                       | Mod + Tab                               |
 | Split window                               | Mod + Shift + Tab                       |

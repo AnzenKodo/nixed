@@ -1,5 +1,6 @@
 from libqtile.utils import guess_terminal
 from variables.style import Style, colors
+import datetime
 
 mod = 'mod4' # Mode set to enter
 
@@ -17,7 +18,7 @@ class Commands:
     micUp = 'amixer set Capture 1%+'
     micDown = 'amixer set Capture 1%-'
     micMute = 'amixer set Capture toggle'
-    screenshort = '/nix/store/s49jmrvg3gdx8h5jyz6rnpy1alnmp1cf-imagemagick-7.1.0-19/bin/import ~/Pictures/Screenshorts/$(date "+%d-%m-%Y-%H:%M:%S").png'
-    screenshortFull = '/nix/store/s49jmrvg3gdx8h5jyz6rnpy1alnmp1cf-imagemagick-7.1.0-19/bin/import -window root ~/Pictures/Screenshorts/$(date "+%d-%m-%Y-%H:%M:%S").png'
+    screenshort = f'/nix/store/j9ykgp1xvsc093m7awydlahfl9gq5g43-imagemagick-7.1.0-26/bin/import Pictures/Screenshots/screenshort.png'
+    screenshortFull = f'/nix/store/j9ykgp1xvsc093m7awydlahfl9gq5g43-imagemagick-7.1.0-26/bin/import -window root "Pictures/Screenshots/screenshotFull.png"'
     dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
     clipboard = f'clipmenu -i -b -p "✀" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'

@@ -66,13 +66,13 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
 - Go to NixOS.
 
 #### Postinstallion
-- Check which boot system you are on to do that check `/sys/firmware/efi` directory
-  exist. To check directory enter following command.
+- Check which boot system you are on to do that check `/sys/firmware/efi`
+  directory exist. To check directory enter following command.
   ```bash
   ls /sys/firmware/efi
   ```
-  - If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory` then
-  your system is Legacy
+  - If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory`
+  then your system is Legacy
   - If it shows the directory then your system is UEFI.
 - Run the given below lines accoding to your boot system one by one in the
   terminal to install NixOS or you refer to NixOS Manual to know more
@@ -172,6 +172,7 @@ nixos-install
 
   # Upgrade to Nixed
   sudo nixos-rebuild switch --upgrade
+  sudo nixos-rebuild switch
   ```
 - Reboot the system and go latest generation to enter in your brand new distro
 - After installing Nixed you're done, congratulations. But the next step is

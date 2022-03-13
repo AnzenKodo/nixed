@@ -20,6 +20,10 @@ alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py
 alias rm="trash-put -v"
 # icat shows image in kitty terminal
 alias icat="kitty +kitten icat"
+# Select theme from online in kitty terminal
+alias theme="kitty +kitten theme"
+# Select emoji in kitty terminal
+alias emoji="kitty +kitten unicode_input --emoji-variation=graphic"
 
 # Edit files
 alias note="nvim ~/Documents/notes/README.md"

@@ -42,6 +42,12 @@
     };
 
     services = {
+      # XSuspender configurably suspends application activity to save battery.
+      xsuspender = {
+        enable = true;
+        defaults.onlyOnBattery = true;
+      };
+
       # Transparent effect for windows
       picom = {
         enable = true;
@@ -108,20 +114,5 @@
         name = "capitaine-cursors";
       };
     };
-
-    gtk = {
-      # enable = true;
-
-      # GTK default font style
-      font.name = "JetBrains Mono";
-
-      # GTK Icon Theme
-      iconTheme = {
-        package = pkgs.papirus-icon-theme;
-        name = "Papirus-Dark";
-      };
-    };
-    # qt.platformTheme = "gtk";
-
   };
 }
