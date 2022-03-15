@@ -48,7 +48,7 @@ let g:lightline = { 'colorscheme': 'one' }
 let g:instant_markdown_autostart = 0
 
 " Vimwiki
-" Changes path of vim vimwiki to `~/Documents/notes`.
+" Changes path of vim Vimwiki to `~/Documents/notes`.
 " Uses Markown syntax instead of Vimwiki syntax.
 let g:vimwiki_list = [{'path': '~/Documents/notes',
                       \ 'syntax': 'markdown', 'ext': '.md'}]

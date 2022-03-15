@@ -37,6 +37,8 @@
       wifi = {
       # Randomize the Mac Address for security purpose.
       macAddress = "random";
+      powersave = true;
+      dns = "none"
       };
     };
 
@@ -67,7 +69,8 @@
       # For minimalist reasons I just startx and it work just fine ;)
       displayManager.startx.enable = true;
 
-      # To know more about qtile see qtile folder for more information like keyboard shortcut.
+      # To know more about qtile see qtile folder for more information like
+      # keyboard shortcut.
       windowManager.qtile.enable = true;
 
       # Laptop Touchpad Support
@@ -81,11 +84,20 @@
 
     # Bluetooth
     blueman.enable = true;
+
+    # Do we ignore the lid state Some laptops are broken.
+    upower.ignoreLid = false;
+
+    # Specifies what to be done when the laptop lid is closed.
+    logind.lidSwitch = "suspend";
   };
 
   hardware = {
     # Bluetooth
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
     acpilight.enable = true;
 
     # Audio Server
@@ -123,7 +135,7 @@
       enable = true;
       allowReboot = false; # Auto Reboot after update
 			# Switch to Unstable channel
-			channel = "https://nixos.org/channels/nixos-unstable"
+			channel = "https://nixos.org/channels/nixos-unstable";
     };
   };
 
@@ -133,6 +145,9 @@
   # Audio server uses this to acquire real-time priority
   security.rtkit.enable = true;
 
+  # Whether to enable power management. This includes support for suspend-to-RAM
+  # and powersave features on laptops.
+  powerManagement.enable = true;
   # Internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
   console = {

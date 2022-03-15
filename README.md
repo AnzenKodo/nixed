@@ -319,5 +319,5 @@ Here are some related projects & also where I got inspiration.
   don't use Arch.
 - [NNBnh Đotfiles Wiki](https://github.com/NNBnh/dots/wiki) - The most
   ambitious OS rice guide
-- [elenapan Dotfiles Wiki](https://github.com/elenapan/dotfiles/wiki) -
-- Articles that answer people's most common questions here.
+- [elenapan Dotfiles Wiki](https://github.com/elenapan/dotfiles/wiki)
+  Articles that answer people's most common questions here.

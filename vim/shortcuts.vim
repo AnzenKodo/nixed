@@ -6,3 +6,6 @@ let mapleader='\'
 " Don't unselected after < & >
 vmap < <gv
 vmap > >gv
+
+" search for visually hightlighted text
+vnoremap <c-f> y<ESC>/<c-r>"<CR>
