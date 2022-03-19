@@ -23,6 +23,12 @@ to download any third-party applications.
 - **Day & Night color scheme** - Qtile changes to dark mode at night and bright
 	mode during the day.
 
+## Important files
+- [commands.py](variables/commands.py) - Though this file you change the file
+  shortcut factions and commands.
+- [style.py](variables/style.py) - Though this file you can edit the system
+  colors and font sizes.
+
 ## Shortcuts
 
 ### Keyboard

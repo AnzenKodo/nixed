@@ -34,11 +34,11 @@
     };
     networkmanager = {
       enable = true;
+      dns = "none";
       wifi = {
-      # Randomize the Mac Address for security purpose.
-      macAddress = "random";
-      powersave = true;
-      dns = "none"
+        # Randomize the Mac Address for security purpose.
+        macAddress = "random";
+        powersave = true;
       };
     };
 
@@ -67,11 +67,20 @@
 
       # Desktop Environment
       # For minimalist reasons I just startx and it work just fine ;)
-      displayManager.startx.enable = true;
+      # displayManager.startx.enable = true;
 
       # To know more about qtile see qtile folder for more information like
       # keyboard shortcut.
-      windowManager.qtile.enable = true;
+      # windowManager.qtile.enable = true;
+
+      # displayManager.lightdm.enable = true;
+      # desktopManager.plasma5.enable = true;
+      # displayManager.gdm.enable = true;
+      # desktopManager.gnome.enable = true;
+      # displayManager.sddm.enable = true;
+      # desktopManager.kodi.enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.pantheon.enable = true;
 
       # Laptop Touchpad Support
       libinput.enable = true;

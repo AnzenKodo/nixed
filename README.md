@@ -15,29 +15,38 @@ The dotfile Distro
 
 ## About
 
-Nixed is dotfile OS which is built upon [NixOS](https://nixos.org).
+Nixed is dotfile OS & built upon NixOS.
+
+### Who is Nixed for?
+
+Nixed is not made for general use it specially made for more specific
+developers in mind.
 
 ### Why Nixed exists?
 
-I like dotfiles because you don't have to configure programs that comes with
-dotfiles. In Nixed I tried to do just that in Nixed you just need to install it
-and if you want you can edit config file and you are ready to go. Nixed is based
-on NixOS which say on it website "Reproducible builds and deployments" which is
-true. You can say Nixed just a skin of NixOS which is customized for down given
-list in mind.
+I like dotfiles because you don't have to configure programs multiple times that
+come with dotfiles. Just edit program dotfiles once, then backup the dotfile
+fileinside somewhere safe, and now you never have to configure the program
+again. I tried to that Nixed also, you need to install it, and if you want you
+can edit the config file & you are ready to go. Nixed is based on NixOS, which
+says on its website, "Reproducible builds and deployments" and it is true. You
+can say Nixed is just a skin of NixOS, which is the customized list given below
+in mind.
 
 ### Features
-- **Easy** - Easer to install , Enter only two lines of code to install.
-- **Minimal** - No bloat only important packages are install.
+- **Minimal** - No bloat. Only essential packages come with Nixed.
 - **Safe** - Saves backup every time you update or install packages vie Nix
   config file.
-- **Up-to-date** - Nixed uses unstable branch of NixOS so you will get latest
-  packages.
-- **Stable** - Even though I using Unstable branch It's still feel like stable.
-- **Keyboard oriented** - Nixed is configured to as much as less mouse.
-- **Programmable** - You can make any changes as you need, Nixed uses Nix,
-  Python, Vim, Fish as it's language.
-- For more you can read [How Nix works](https://nixos.org/guides/how-nix-works.html)
+- **Up-to-date** - Nixed uses an unstable branch of NixOS. You will get the
+  latest packages like Arch Linux.
+- **Stable** - Even though Nixed uses the unstable branch of NixOS it still
+  works like the stable branch. Even if Nixed breaks, you can go back to the
+  previous generation because Nixed always backup after system updates or After
+  changes in the `configuration.nix` file.
+- **Keyboard oriented** - Nixed is configured to use as much as less mouse.
+- **Programmable** - You can make any changes you need. Nixed uses Nix, Python,
+  Vim, Fish as its language.
+- For more you can read [How Nix works?](https://nixos.org/guides/how-nix-works.html)
 
 ## 📄 Documentation
 
@@ -47,14 +56,11 @@ list in mind.
 - [Kitty](kitty)
 
 ## 🏁 Getting Started
-NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
-- To Install NixOS go to [next step](#nixed-newer-installion).
-  - I have given the easy step without much technical details to make installion
-  easy as copy and paste but still NixOS very hard distro to install.
-  - If you get stuck somewhere or you want full technical details then you
-  can go to [NixOS Manual](https://nixos.org/manual/nixos) website.
-- If you already installed NixOS then go to [second step](#nixed-installion).
-- Just want to twick something with Nixed go to [thrid step](#advance)
+NixOS is the baseline of Nixed, so to use Nixed, you need to install NixOS.
+
+**Note:** I have given the easy step without many technical details to make
+installation easy as copy and pasting but still NixOS very hard distro to
+install.
 
 ### Nixed newer installion
 - Download the ISO from the [NixOS website](https://nixos.org/download.html#download-nixos).
@@ -71,12 +77,13 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
   ```bash
   ls /sys/firmware/efi
   ```
-  - If it shows `ls: cannot access '/sys/firmware/efi': No such file or directory`
-  then your system is Legacy
+  - If it shows
+  `ls: cannot access '/sys/firmware/efi': No such file or directory` then your
+  system is Legacy
   - If it shows the directory then your system is UEFI.
 - Run the given below lines accoding to your boot system one by one in the
   terminal to install NixOS or you refer to NixOS Manual to know more
-  infomation about given commands. (Note: This will wipe out all your data,
+  infomation about given commands. (**Note**: This will wipe out all your data,
   make sure you have backup of your data).
 
   <details>
@@ -118,8 +125,8 @@ NixOS is baseline of Nixed so to use Nixed you have to install NixOS.
     ```
   </details>
 
-- Edit `/mnt/etc/nixos/configuration.nix` file add given lines in thrid last line
-  in file.
+- Edit `/mnt/etc/nixos/configuration.nix` file add given lines in thrid last
+  line in file.
 ```nix
 # Enable user as username `ramen` which is default in Nixed
 users.users.ramen = {
@@ -199,6 +206,7 @@ nixos-install
 - After installing Nixed you're done, congratulations. But the next step is
   learn to use Nixed.
 
+<!--
 ### Advance
 Some special twicks for Nixed.
 ```bash
@@ -213,6 +221,7 @@ ssh-add ~/.ssh/id_ed25519
 cat $HOME/.ssh/id_ed25519.pub
 xdg-open https://github.com/settings/keys
 ```
+-->
 
 ## 💻 System Information
 
