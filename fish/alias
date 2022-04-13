@@ -24,6 +24,8 @@ alias icat="kitty +kitten icat"
 alias theme="kitty +kitten theme"
 # Select emoji in kitty terminal
 alias emoji="kitty +kitten unicode_input --emoji-variation=graphic"
+alias gcc="/nix/store/pja9g36cy32z3d51942jqk91a6l2d5nv-gcc-wrapper-10.3.0/bin/gcc"
+alias g++="/nix/store/pja9g36cy32z3d51942jqk91a6l2d5nv-gcc-wrapper-10.3.0/bin/g++"
 
 # Edit files
 alias note="nvim ~/Documents/notes/README.md"

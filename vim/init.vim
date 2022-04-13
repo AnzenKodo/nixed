@@ -70,6 +70,7 @@ set syntax=on " Enable syntax highlight
 set number " Show numbers
 set showmatch	"	Matching brace
 set colorcolumn=80 " column line to indicate limit
+highlight ColorColumn ctermbg=0 guibg=0
 " set termguicolors "Enable true color
 
 " Side Bar

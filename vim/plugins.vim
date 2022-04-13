@@ -12,9 +12,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
 
 	" Plugins for specific Programming Languages only
-	Plug 'lepture/vim-jinja'	" Nunjucks
-	Plug 'mattn/emmet-vim'		" HTML
-	Plug 'LnL7/vim-nix'				" Nix
+	Plug 'lepture/vim-jinja'			" Nunjucks
+	Plug 'mattn/emmet-vim'				" HTML
+	Plug 'LnL7/vim-nix'						" Nix
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm i'  }	" Markdown Preview
 call plug#end()
 
@@ -29,12 +29,16 @@ let g:rainbow_active = 1 " Active Plug-in
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
-set omnifunc=ale#completion#OmniFunc
+" set omnifunc=ale#completion#OmniFunc
 let g:ale_sign_error = '🔴'
 let g:ale_sign_warning = '⭕'
 " let g:ale_deno_lsp_project_root = '_config.ts'
 " Enable unstable version of deno
 let g:ale_deno_unstable = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'xml': ['xmllint'],
+\}
 " let g:ale_fixers = {
 " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 " \   'typescript': ['deno'],
@@ -63,3 +67,6 @@ let g:markdown_syntax_conceal=0
 let g:vim_json_conceal=0
 " To fix Vimwiki bugs with indentLine plugin
 let g:indentLine_fileTypeExclude = ['vimwiki']
+
+" emmet-vim
+" let g:user_emmet_leader_key='<C-Y>'
