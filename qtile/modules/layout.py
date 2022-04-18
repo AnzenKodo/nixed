@@ -5,7 +5,7 @@ from variables.style import colors
 
 layout_theme = {
     'border_width': 2,
-    'border_focus': colors[1]
+    'border_focus': colors[1],
 }
 
 layouts = [
