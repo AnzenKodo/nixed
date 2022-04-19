@@ -16,9 +16,15 @@
     ];
 
   # EFI boot loader
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    # Switch to latest linux kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    plymouth.font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrains-Mono.ttf";
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   # Timezone
@@ -47,7 +53,7 @@
     # More info -> https://one.one.one.one/family/
     nameservers = [ "1.1.1.3" "1.0.0.3" ];
 
-    # hostName = "nixos"; # Device Hostname
+    hostName = "goroot"; # Device Hostname
     # wireless.enable = true;  # wpa_supplicant
 
     # Proxys
@@ -117,9 +123,24 @@
   sound.enable = true;
 
   # System fonts
-  fonts.fonts = with pkgs; [
-    jetbrains-mono
-  ];
+  fonts = {
+    # Fonts packages
+    fonts = with pkgs; [
+      jetbrains-mono noto-fonts
+    ];
+
+    # Set default fonts
+    fontconfig.defaultFonts = {
+      serif = [ "Noto Serif" "DejaVu Serif" ];
+      sansSerif = [ "Noto Sans" "DejaVu Sans" ];
+      monospace = [ "JetBrains Mono" "DejaVu Sans Mono"];
+      emoji = [ "Noto Color Emoji" ];
+    };
+
+    # Basic set of fonts providing several font styles and families and
+    # reasonable coverage
+    enableDefaultFonts = true;
+  };
 
   users.users = {
     # User
@@ -157,10 +178,11 @@
   # Whether to enable power management. This includes support for suspend-to-RAM
   # and powersave features on laptops.
   powerManagement.enable = true;
+
   # Internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
+    font = "JetBrains Mono";
     keyMap = "us";
   };
 }
