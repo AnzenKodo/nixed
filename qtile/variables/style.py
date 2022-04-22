@@ -9,7 +9,7 @@ wallpaper = ""
 
 # Checks time fill colors according to time.
 nowhours = int(strftime("%-H"))
-if (nowhours >= 18):
+if (nowhours >= 18 or nowhours <= 6):
   # Default colors from Punk Black Colors
   colors.extend(['#000000', '#F20544', '#f2b705', '#F20544', '#05f2c7',
                  '#0583f2', '#01a252', '#fefbfe', '#000000'])
