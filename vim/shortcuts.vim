@@ -8,4 +8,13 @@ vmap < <gv
 vmap > >gv
 
 " search for visually hightlighted text
-vnoremap <c-f> y<ESC>/<c-r>"<CR>
+vnoremap <C-f> y<ESC>/<c-r>"<CR>
+
+" Search form selected text
+vmap X y/<C-R>"<C-R>
+
+" Disable arrow keys in insert mode
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>

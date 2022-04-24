@@ -51,7 +51,7 @@
       # Transparent effect for windows
       picom = {
         enable = true;
-        blur = true;
+        # blur = true;
         # fade = true;
         # fadeDelta = 5;
         # shadow = true;
@@ -93,10 +93,11 @@
         unzip                       # unzip zip files
         git                         # Version control system
         patool                      # Portable archive file manager
+        gotop                       # Activity monitor
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime
-        # deno        # Morden JavaScript back-end runtime
+        deno        # Morden JavaScript back-end runtime
         commitizen  # Make proper commit
       ];
     };
