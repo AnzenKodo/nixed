@@ -82,6 +82,7 @@
         brave  	        # Browser
         dmenu           # Menu
         clipmenu        # Clipboard
+        emojipick       # Emoji
 
         # CLI Application
         curl                        # Downloaded
