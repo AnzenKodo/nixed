@@ -46,6 +46,8 @@ let g:ale_fixers = {
 " A.L.E shortcuts
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Autocomplete setting
+set completeopt=menu,menuone,preview,noselect,noinsert
 
 " Lightline
 let g:lightline = { 'colorscheme': 'one' }
