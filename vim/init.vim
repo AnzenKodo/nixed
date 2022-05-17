@@ -25,10 +25,11 @@ autocmd BufWritePre * %s/\s\+$//e " Remove white space
 " Indention
 set tabstop=2 " Tab size
 set autoindent
-set softtabstop=2
+set softtabstop=1
 set shiftwidth=2
 set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
+" set expandtab " Insert space characters whenever the tab key is pressed
 
 " Search
 set incsearch
