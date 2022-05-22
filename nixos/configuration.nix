@@ -185,4 +185,4 @@
     font = "JetBrains Mono";
     keyMap = "us";
   };
-} 
+}

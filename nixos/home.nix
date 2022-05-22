@@ -83,7 +83,7 @@
         dmenu           # Menu
         clipmenu        # Clipboard
         emojipick       # Emoji
-
+        vscode
         # CLI Application
         curl                        # Downloaded
         wpgtk                       # Generate color schemes for Applications
