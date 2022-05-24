@@ -66,6 +66,7 @@
         provider = "geoclue2";
       };
     };
+
     home = {
       file = {
         ".config/fish/config.fish".text = ''
@@ -75,6 +76,12 @@
         # Create hard link's between files
         ".config/git/config".source = ../git.init;
         ".config/npm/npmrc".source = ../npmrc;
+      };
+
+      # Cursor theme
+      pointerCursor = {
+        package = pkgs.capitaine-cursors;
+        name = "capitaine-cursors";
       };
 
       packages = with pkgs; [
@@ -98,7 +105,7 @@
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime
-        # deno        # Morden JavaScript back-end runtime
+        deno        # Morden JavaScript back-end runtime
         commitizen  # Make proper commit
       ];
     };
@@ -107,14 +114,6 @@
     # More here -> https://wiki.archlinux.org/title/XDG_Base_Directory
     xdg = {
       enable = true;
-    };
-
-    xsession = {
-      # Cursor theme
-      pointerCursor = {
-        package = pkgs.capitaine-cursors;
-        name = "capitaine-cursors";
-      };
     };
   };
 }
