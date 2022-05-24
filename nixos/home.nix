@@ -83,7 +83,7 @@
         dmenu           # Menu
         clipmenu        # Clipboard
         emojipick       # Emoji
-        vscode
+
         # CLI Application
         curl                        # Downloaded
         wpgtk                       # Generate color schemes for Applications
@@ -98,7 +98,7 @@
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime
-        deno        # Morden JavaScript back-end runtime
+        # deno        # Morden JavaScript back-end runtime
         commitizen  # Make proper commit
       ];
     };
