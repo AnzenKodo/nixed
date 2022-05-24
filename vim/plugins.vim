@@ -71,4 +71,4 @@ let g:vim_json_conceal=0
 let g:indentLine_fileTypeExclude = ['vimwiki']
 
 " emmet-vim
-" let g:user_emmet_leader_key='<C-Y>'
+let g:user_emmet_leader_key='<C-Y>'
