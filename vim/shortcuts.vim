@@ -7,12 +7,6 @@ let mapleader='\'
 vmap < <gv
 vmap > >gv
 
-" search for visually hightlighted text
-vnoremap <C-f> y<ESC>/<c-r>"<CR>
-
-" Search form selected text
-vmap X y/<C-R>"<C-R>
-
 " Disable arrow keys in insert mode
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
