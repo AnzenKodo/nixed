@@ -55,7 +55,7 @@
         # fade = true;
         # fadeDelta = 5;
         # shadow = true;
-        inactiveDim = "0.2";
+        # inactiveDim = "0.2";
       };
 
       # Night mode adjusts the color temperature
