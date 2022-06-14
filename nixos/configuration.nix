@@ -11,7 +11,7 @@
       ./hardware-configuration.nix
 
       # Home Manager
-      "${ builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz }/nixos"
+      "${ builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz }/nixos"
       /home/ramen/.config/nixed/nixos/home.nix
     ];
 
@@ -67,6 +67,8 @@
   };
 
   services = {
+    mysql.enable = true;
+    mysql.package = pkgs.mariadb;
     xserver = {
       # X11 windowing system
       enable = true;
@@ -128,8 +130,8 @@
     fonts = with pkgs; [
       jetbrains-mono noto-fonts
     ];
-
     # Set default fonts
+
     fontconfig.defaultFonts = {
       serif = [ "Noto Serif" "DejaVu Serif" ];
       sansSerif = [ "Noto Sans" "DejaVu Sans" ];

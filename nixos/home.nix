@@ -105,7 +105,6 @@
 
         # Applications for Programming
         nodejs      # JavaScript back-end runtime
-        deno        # Morden JavaScript back-end runtime
         commitizen  # Make proper commit
       ];
     };
