@@ -67,8 +67,12 @@
   };
 
   services = {
-    mysql.enable = true;
-    mysql.package = pkgs.mariadb;
+    mysql = {
+      enable = true;
+      dataDir = "/var/db/mysql";
+      package = pkgs.mysql;
+    };
+
     xserver = {
       # X11 windowing system
       enable = true;
