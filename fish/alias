@@ -17,7 +17,7 @@ alias tree="find . | sed -e 's/[^-][^\/]*\// |/g' -e 's/|\([^ ]\)/|-\1/'"
 # Start Qtile from startx
 alias startq="startx /usr/bin/env qtile start -c ~/.config/nixed/qtile/config.py"
 # Move trash in Trash bin instead of deleting it forever
-alias rm="trash-put -v"
+alias rm="trash-put"
 # icat shows image in kitty terminal
 alias icat="kitty +kitten icat"
 # Select theme from online in kitty terminal
