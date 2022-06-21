@@ -89,7 +89,6 @@
         brave  	        # Browser
         dmenu           # Menu
         clipmenu        # Clipboard
-        emojipick       # Emoji
 
         # CLI Application
         curl                        # Downloaded
@@ -102,10 +101,6 @@
         git                         # Version control system
         patool                      # Portable archive file manager
         gotop                       # Activity monitor
-
-        # Applications for Programming
-        nodejs      # JavaScript back-end runtime
-        commitizen  # Make proper commit
       ];
     };
 

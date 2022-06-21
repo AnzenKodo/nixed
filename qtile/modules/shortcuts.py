@@ -58,7 +58,6 @@ keys = [
 
     # Menu
     Key([mod], 'Return', lazy.spawn(Commands.dmenu), 'Menu'),
-    Key([mod], 'e', lazy.spawn(Commands.emoji), 'Emoji menu'),
     Key([mod], 'c', lazy.spawn(Commands.clipboard), desc='Clipboard menu'),
 
     # Application

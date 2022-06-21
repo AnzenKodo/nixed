@@ -22,4 +22,3 @@ class Commands:
     screenshortFull = f'/nix/store/wc5pshsqxp1i85nc1i98fga7mha7yqfw-imagemagick-7.1.0-37/bin/import -window root "Pictures/Screenshots/screenshotFull.png"'
     dmenu = f'dmenu_run -i -b -p "☰" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
     clipboard = f'clipmenu -i -b -p "✀" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
-    emoji = f'emojipick -i -b -p "😃" -fn "{Style.font}" -nb {Style.background} -nf {colors[7]} -sb {Style.line} -sf {colors[8]}'
