@@ -17,8 +17,7 @@ set -gx NIXED									$XDG_CONFIG_HOME/nixed
 set -gx GTK_RC_FILES					$XDG_CONFIG_HOME/gtk-1.0/gtkrc
 set -gx GTK2_RC_FILES					$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
-# set -gx DENO_INSTALL_ROOT			$XDG_CONFIG_HOME/deno
-set -gx DENO_INSTALL          $HOME/.deno
+set -gx DENO_INSTALL		    	$XDG_CONFIG_HOME/deno
 set -gx GNUPGHOME							$XDG_CONFIG_HOME/gnupg
 set -gx HISTFILE							$XDG_CACHE_HOME/bash/history
 set -gx NODE_REPL_HISTORY			$XDG_CACHE_HOME/node_repl_history
