@@ -67,11 +67,6 @@
   };
 
   services = {
-    mysql = {
-      enable = true;
-      package = pkgs.mariadb;
-    };
-
     xserver = {
       # X11 windowing system
       enable = true;
