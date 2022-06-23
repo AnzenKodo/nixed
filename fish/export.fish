@@ -25,6 +25,6 @@ set -gx COMPOSER_CACHE_DIR    $XDG_CACHE_HOME/composer
 
 # Add folder to your path
 # Note don't forgot to include `:` in end before entering next folder path
-set -gx PATH "$PATH:$HOME/.local/bin:$XDG_CONFIG_HOME/npm/bin:$DENO_INSTALL/.deno/bin"
+set -gx PATH "$PATH:$HOME/.local/bin:$XDG_CONFIG_HOME/npm/bin:$DENO_INSTALL/bin"
 # Change NixOS `configuration.nix` file location
 set -gx NIX_PATH nixos-config=$NIXED/nixos/configuration.nix:$NIX_PATH
