@@ -14,6 +14,7 @@ set -gx XCOMPOSEFILE	$XDG_CONFIG_HOME/X11/xcompose
 set -gx XCOMPOSECACHE $XDG_CACHE_HOME/X11/xcompose
 set -gx XAUTHORITY    $XDG_RUNTIME_DIR/Xauthority
 
+
 # Applications
 set -gx NIXED									$XDG_CONFIG_HOME/nixed
 set -gx GTK_RC_FILES					$XDG_CONFIG_HOME/gtk-1.0/gtkrc
