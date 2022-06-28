@@ -2,6 +2,7 @@
 
 # XDG base directory
 # More info on --> https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+set -gx XDG_STATE_HOME  $HOME/.local/state
 set -gx XDG_CACHE_HOME	~/.cache
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx XDG_DATA_HOME		~/.local/share
@@ -11,6 +12,7 @@ set -gx XINITRC				$XDG_CONFIG_HOME/X11/xinitrc
 set -gx XSERVERRC			$XDG_CONFIG_HOME/X11/xserverrc
 set -gx XCOMPOSEFILE	$XDG_CONFIG_HOME/X11/xcompose
 set -gx XCOMPOSECACHE $XDG_CACHE_HOME/X11/xcompose
+set -gx XAUTHORITY    $XDG_RUNTIME_DIR/Xauthority
 
 # Applications
 set -gx NIXED									$XDG_CONFIG_HOME/nixed
