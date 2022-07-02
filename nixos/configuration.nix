@@ -105,6 +105,12 @@
 
     # Specifies what to be done when the laptop lid is closed.
     logind.lidSwitch = "suspend";
+
+    # Capture service
+    arbtt = {
+      enable = false;
+      logFile = "~/.config/arbtt/arbtt-capture.log";
+    };
   };
 
   hardware = {

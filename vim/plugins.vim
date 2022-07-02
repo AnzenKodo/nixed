@@ -15,7 +15,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'lepture/vim-jinja'			" Nunjucks
 	Plug 'mattn/emmet-vim'				" HTML
 	Plug 'LnL7/vim-nix'						" Nix
-	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm i'  }	" Markdown Preview
+	" Markdown Preview
+	Plug 'iamcco/markdown-preview.nvim', {
+				\ 'do': { -> mkdp#util#install() },
+				\'for': ['markdown', 'vim-plug']
+				\ }
 call plug#end()
 
 " Loads Neovim plugins
