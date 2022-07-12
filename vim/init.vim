@@ -1,15 +1,15 @@
 " Detect file type
 filetype on " Enable type file detection
 " filetype plugin on " Plug-in for detected file
-filetype indent on " Indent for current file
+" filetype indent on " Indent for current file
 
 " Fix
 set nocompatible " Fix vi bug
 set splitbelow splitright " Fix split bug
 autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
 " Memory
 set history=1000 " History Size
@@ -23,13 +23,11 @@ set noswapfile " Disable swap files
 autocmd BufWritePre * %s/\s\+$//e " Remove white space
 
 " Indention
-set tabstop=2 " Tab size
-" set autoindent
-set softtabstop=1
-set shiftwidth=2
-" set smartindent	" Enable smart-indent
-" set smarttab	" Enable smart-tabs
-set expandtab " Insert space characters whenever the tab key is pressed
+set autoindent    " Indentation of the current line to the next
+set expandtab     " Insert space characters whenever the tab key
+set softtabstop=2 " makes the spaces feel like real tabs
+set shiftwidth=2  " Number of space characters inserted for indentation
+set tabstop=8     " Control the number of space characters that will be inserted
 
 " Search
 set incsearch

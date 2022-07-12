@@ -1,25 +1,24 @@
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'sheerun/vim-polyglot'					" Syntax highlighting
-	Plug 'tpope/vim-commentary'					" Comment
-	Plug 'tpope/vim-surround'						" Change pairs
-	Plug 'luochen1990/rainbow'					" Rainbow parentheses
-	Plug 'dense-analysis/ale'						" Lintier, Formatter, Code Completion
-	Plug 'lilydjwg/colorizer'						" Color Preview
-	Plug 'itchyny/lightline.vim'				" Status bar
-	Plug 'vimwiki/vimwiki'							" Wiki & Note taking
-	Plug 'Yggdroot/indentLine'					" Indention
-	Plug 'dominikduda/vim_current_word' " Highlight current word under cursor
-	Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
+  Plug 'tpope/vim-commentary'		" Comment
+  Plug 'tpope/vim-surround'						" Change pairs
+  Plug 'luochen1990/rainbow'					" Rainbow parentheses
+  Plug 'dense-analysis/ale'						" Lintier, Formatter, Code Completion
+  Plug 'lilydjwg/colorizer'						" Color Preview
+  Plug 'itchyny/lightline.vim'				" Status bar
+  Plug 'vimwiki/vimwiki'							" Wiki & Note taking
+  Plug 'Yggdroot/indentLine'					" Indention
+  Plug 'dominikduda/vim_current_word' " Highlight current word under cursor
+  Plug 'alvan/vim-closetag'						" Auto close (X)HTML tags
 
-	" Plugins for specific Programming Languages only
-	Plug 'lepture/vim-jinja'			" Nunjucks
-	Plug 'mattn/emmet-vim'				" HTML
-	Plug 'LnL7/vim-nix'						" Nix
-	" Markdown Preview
-	Plug 'iamcco/markdown-preview.nvim', {
-				\ 'do': { -> mkdp#util#install() },
-				\'for': ['markdown', 'vim-plug']
-				\ }
+  " Plugins for specific Programming Languages only
+  Plug 'lepture/vim-jinja'			" Nunjucks
+  Plug 'mattn/emmet-vim'				" HTML
+  Plug 'LnL7/vim-nix'						" Nix
+  " Markdown Preview
+  Plug 'iamcco/markdown-preview.nvim', {
+	\ 'do': { -> mkdp#util#install() },
+	\'for': ['markdown', 'vim-plug']
+	\ }
 call plug#end()
 
 " Loads Neovim plugins
@@ -40,9 +39,9 @@ let g:ale_sign_warning = '⭕'
 " Enable unstable version of deno
 let g:ale_deno_unstable = 1
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'xml': ['xmllint'],
-\}
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \   'xml': ['xmllint'],
+      \}
 " let g:ale_fixers = {
 " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 " \   'typescript': ['deno'],
@@ -61,7 +60,7 @@ let g:instant_markdown_autostart = 0
 " Changes path of vim Vimwiki to `~/Documents/notes`.
 " Uses Markown syntax instead of Vimwiki syntax.
 let g:vimwiki_list = [{'path': '~/Documents/notes',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+      \ 'syntax': 'markdown', 'ext': '.md'}]
 " Default file changes to`README.md` instead of `index.md`
 let g:vimwiki_index = "README"
 
