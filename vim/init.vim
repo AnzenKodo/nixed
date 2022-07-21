@@ -2,6 +2,7 @@
 filetype on " Enable type file detection
 " filetype plugin on " Plug-in for detected file
 " filetype indent on " Indent for current file
+set exrc " Finds config file in current dir
 
 " Fix
 set nocompatible " Fix vi bug
@@ -34,7 +35,7 @@ set incsearch
 set ignorecase " Ignore capital letter in Search
 " set smartcase " Case-sensitive in Search
 set showmatch " Matching words in search
-set hlsearch " Highlighting Search
+set nohlsearch " No Highlighting Search
 
 " Wild menu
 set wildmenu " Auto Completion
@@ -67,11 +68,15 @@ set clipboard=unnamedplus " Vim to use system clipboard
 " Editor
 set syntax=on " Enable syntax highlight
 set number " Show numbers
-set showmatch	"	Matching brace
+set showmatch	" Matching brace
 set colorcolumn=80 " column line to indicate limit
-set wrap lbr
-highlight ColorColumn ctermbg=0 guibg=0
-" set termguicolors "Enable true color
+set scrolloff=8
+set signcolumn=yes
+set nowrap
+" highlight ColorColumn ctermbg=0 guibg=0
+set termguicolors " Enable true color
+set cursorline " Highlight the current line
+" set cursorcolumn " Highlight the column line
 
 " Side Bar
 set relativenumber " Numbers scroll
