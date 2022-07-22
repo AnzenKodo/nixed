@@ -114,7 +114,7 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-    disable = { "" },
+    disable = { "json" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -122,3 +122,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+nnoremap <silent> ff    <cmd>lua vim.lsp.buf.formatting()<CR>
+autocmd BufWritePre * lua vim.lsp.buf.formatting()

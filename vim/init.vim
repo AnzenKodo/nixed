@@ -61,26 +61,26 @@ set clipboard=unnamedplus " Vim to use system clipboard
 " Look
 
 " Cursor
-" set cursorline " Current Line
+set cursorline " Current Line
 " set cursorcolumn " Current column
-" hi CursorLine guibg=#2f2f2f ctermfg=none
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
 
 " Editor
 set syntax=on " Enable syntax highlight
 set number " Show numbers
 set showmatch	" Matching brace
 set colorcolumn=80 " column line to indicate limit
+highlight ColorColumn ctermbg=black guibg=#202322
 set scrolloff=8
-set signcolumn=yes
 set nowrap
-" highlight ColorColumn ctermbg=0 guibg=0
 set termguicolors " Enable true color
-set cursorline " Highlight the current line
-" set cursorcolumn " Highlight the column line
 
 " Side Bar
 set relativenumber " Numbers scroll
 set ruler " Show cursor
+set signcolumn=yes
+hi clear SignColumn
 
 " Bottom Bar
 " set cmdheight=2 " Displaying messages
