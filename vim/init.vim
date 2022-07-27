@@ -74,7 +74,7 @@ set colorcolumn=80 " column line to indicate limit
 highlight ColorColumn ctermbg=black guibg=#202322
 set scrolloff=8
 set nowrap
-set termguicolors " Enable true color
+" set termguicolors " Enable true color
 
 " Side Bar
 set relativenumber " Numbers scroll
