@@ -108,7 +108,7 @@
 
     # Capture service
     arbtt = {
-      enable = false;
+      enable = true;
       logFile = "~/.config/arbtt/arbtt-capture.log";
     };
   };
